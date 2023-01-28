@@ -1,0 +1,51 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+[application]
+
+config/name="CrossRoadGame"
+
+[debug]
+
+settings/fps/force_fps=60
+settings/stdout/print_fps=true
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[editor]
+
+scene_naming=2
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[locale]
+
+locale_filter=[ 1, [ "ru", "uk" ] ]
+
+[physics]
+
+common/enable_pause_aware_picking=true
+2d/thread_model=2
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+threads/thread_model=2
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+misc/lossless_compression/force_png=true
+environment/default_clear_color=Color( 0.168627, 0.168627, 0.168627, 1 )
