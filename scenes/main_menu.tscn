@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://resources/img/MenuIcon.png" type="Texture" id=1]
 [ext_resource path="res://resources/Hercules.otf" type="DynamicFontData" id=2]
@@ -29,8 +29,6 @@ func _on_Continue_pressed():
 func _on_Settings_pressed():
 	$Tween.interpolate_property($camera, \"position\", $camera.position, Vector2(640, 1800), 1, Tween.TRANS_SINE, Tween.EASE_OUT)
 	$Tween.start()
-	print($camera.position.y)
-	print($camera.position.x)
 
 
 func _on_Exit_pressed():
@@ -47,6 +45,16 @@ func _on_settings_back_pressed():
 
 func _on_full_screen_b_toggled(toggle):
 	OS.window_fullscreen = toggle
+
+# 0 - ua || 1 - sru || 2 - en
+func _on_language_item_selected(id):
+	if id == 0:
+		Global.languge = \"uk\"
+	elif id == 1:
+		Global.languge = \"ru\"
+	else:
+		Global.languge = \"en\"
+	TranslationServer.set_locale(Global.languge)
 "
 
 [sub_resource type="DynamicFont" id=2]
@@ -58,6 +66,10 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=3]
 size = 90
 outline_size = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 28
 font_data = ExtResource( 2 )
 
 [node name="main_menu" type="Control"]
@@ -151,11 +163,22 @@ theme = ExtResource( 3 )
 text = "Back"
 
 [node name="full_screen_b" type="CheckButton" parent="settings"]
-margin_left = 424.0
+margin_left = 792.0
 margin_top = 128.0
-margin_right = 912.0
+margin_right = 928.0
 margin_bottom = 226.0
 theme = ExtResource( 5 )
+align = 1
+
+[node name="language2" type="Label" parent="settings"]
+margin_left = 344.0
+margin_top = 256.0
+margin_right = 687.0
+margin_bottom = 370.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "language"
 align = 1
 
 [node name="full_screen_l" type="Label" parent="settings"]
@@ -169,9 +192,30 @@ custom_fonts/font = SubResource( 3 )
 text = "FullScreen "
 align = 1
 
+[node name="language" type="OptionButton" parent="settings"]
+anchor_left = -0.03125
+anchor_top = 0.0449438
+anchor_right = 0.0460938
+anchor_bottom = 0.0955056
+margin_left = 840.0
+margin_top = 256.0
+margin_right = 869.0
+margin_bottom = 276.0
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 4 )
+text = "Ukranian"
+align = 1
+icon_align = 1
+items = [ "Ukranian", null, false, 0, null, "Russian", null, false, 1, null, "English", null, false, 2, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="settings/settings_back" to="." method="_on_settings_back_pressed"]
 [connection signal="toggled" from="settings/full_screen_b" to="." method="_on_full_screen_b_toggled"]
+[connection signal="item_selected" from="settings/language" to="." method="_on_language_item_selected"]

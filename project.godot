@@ -13,6 +13,10 @@ config_version=4
 config/name="CrossRoadGame"
 run/main_scene="res://scenes/main_menu.tscn"
 
+[autoload]
+
+Global="*res://scripts/singleton/global.gd"
+
 [debug]
 
 settings/fps/force_fps=60
@@ -74,7 +78,10 @@ pause={
 
 [locale]
 
-locale_filter=[ 1, [ "ru", "uk" ] ]
+locale_filter=[ 0, [  ] ]
+translations=PoolStringArray( "res://resources/locale/locale.en.translation", "res://resources/locale/locale.ru.translation", "res://resources/locale/locale.uk.translation" )
+translation_remaps={
+}
 
 [physics]
 
