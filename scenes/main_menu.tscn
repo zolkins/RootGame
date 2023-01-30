@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://resources/img/MenuIcon.png" type="Texture" id=1]
 [ext_resource path="res://resources/Hercules.otf" type="DynamicFontData" id=2]
@@ -36,16 +36,27 @@ func _on_Exit_pressed():
 	get_tree().quit()
 	
 
-
+# Settings_part
 func _on_settings_back_pressed():
 	$Tween.interpolate_property($camera, \"position\", $camera.position, Vector2(640, 360), 1, Tween.TRANS_SINE, Tween.EASE_OUT)
 	$Tween.start()
+	
+
+
+
+func _on_full_screen_b_toggled(toggle):
+	OS.window_fullscreen = toggle
 "
 
 [sub_resource type="DynamicFont" id=2]
 size = 150
 outline_size = 20
 outline_color = Color( 0.470588, 0.364706, 0.188235, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 61
+outline_size = 2
 font_data = ExtResource( 2 )
 
 [node name="main_menu" type="Control"]
@@ -63,7 +74,7 @@ position = Vector2( 640, 1530 )
 scale = Vector2( 0.596208, 0.50515 )
 texture = ExtResource( 4 )
 
-[node name="Label" type="Label" parent="."]
+[node name="MainMenu" type="Label" parent="."]
 margin_left = 731.0
 margin_top = 20.0
 margin_right = 1688.0
@@ -110,22 +121,55 @@ current = true
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="settings" type="Control" parent="."]
+anchor_left = -0.256
+anchor_bottom = 0.656
+margin_left = 327.68
 margin_top = 1440.0
 margin_right = 1280.0
-margin_bottom = 2160.0
+margin_bottom = 1679.68
+
+[node name="white_settings" type="ColorRect" parent="settings"]
+margin_right = 1280.0
+margin_bottom = 720.0
 color = Color( 0.866667, 0.862745, 0.862745, 0.572549 )
 
-[node name="settings_back" type="Button" parent="."]
-margin_left = 552.0
-margin_top = 2056.0
-margin_right = 784.0
-margin_bottom = 2120.0
+[node name="black_settings2" type="ColorRect" parent="settings"]
+margin_left = 160.0
+margin_top = 32.0
+margin_right = 1171.0
+margin_bottom = 600.0
+color = Color( 0.360784, 0.368627, 0.309804, 0.905882 )
+
+[node name="settings_back" type="Button" parent="settings"]
+margin_left = 528.0
+margin_top = 616.0
+margin_right = 747.0
+margin_bottom = 680.0
 theme = ExtResource( 3 )
 text = "Back"
+
+[node name="full_screen_b" type="CheckButton" parent="settings"]
+margin_left = 832.0
+margin_top = 120.0
+margin_right = 908.0
+margin_bottom = 160.0
+align = 1
+
+[node name="full_screen_l" type="Label" parent="settings"]
+margin_left = 312.0
+margin_top = 96.0
+margin_right = 584.0
+margin_bottom = 192.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "FullScreen "
+align = 1
 
 [connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
-[connection signal="pressed" from="settings_back" to="." method="_on_settings_back_pressed"]
+[connection signal="pressed" from="settings/settings_back" to="." method="_on_settings_back_pressed"]
+[connection signal="toggled" from="settings/full_screen_b" to="." method="_on_full_screen_b_toggled"]
