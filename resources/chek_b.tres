@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=5 format=2]
+
+[ext_resource path="res://resources/Hercules.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://resources/img/CheckBoxoff.png" type="Texture" id=2]
+[ext_resource path="res://resources/img/CheckBox10.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 44
+font_data = ExtResource( 1 )
+
+[resource]
+CheckButton/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+CheckButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+CheckButton/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
+CheckButton/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+CheckButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 4
+CheckButton/fonts/font = SubResource( 1 )
+CheckButton/icons/off = ExtResource( 2 )
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = ExtResource( 3 )
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
