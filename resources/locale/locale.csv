@@ -1,7 +1,8 @@
 id,uk,ru,en
 language,Мова,Язык,Language
-fullscreen,Повноекранний,Полноэкранный,Fullscreen
+fullscreen,Повноекранний,Полноэкранный,FullScreen
 exit,Вихід,Выход,Exit
 settings,Налаштування,Настройки,Settings
 continue,Продовжувати,Продолжать,Continue
-newgame,Нова гра,Новая игра,Newgame
+new_game,Нова гра,Новая игра,New Game
+music_volume,Гучність музики,Громкость музыки,Music volume

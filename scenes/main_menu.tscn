@@ -97,7 +97,7 @@ margin_top = 237.0
 margin_right = 1201.0
 margin_bottom = 272.0
 theme = ExtResource( 3 )
-text = "newgame"
+text = "new_game"
 
 [node name="Continue" type="Button" parent="."]
 margin_left = 771.0
@@ -159,37 +159,35 @@ text = "Back"
 
 [node name="full_screen_b" type="CheckButton" parent="settings"]
 margin_left = 792.0
-margin_top = 128.0
-margin_right = 928.0
-margin_bottom = 226.0
+margin_top = 80.0
+margin_right = 904.0
+margin_bottom = 178.0
 theme = ExtResource( 5 )
 align = 1
 
 [node name="language2" type="Label" parent="settings"]
-margin_left = 352.0
-margin_top = 256.0
-margin_right = 695.0
-margin_bottom = 370.0
+margin_left = 360.0
+margin_top = 210.0
+margin_right = 703.0
+margin_bottom = 324.0
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "language"
-align = 1
 
 [node name="full_screen_l" type="Label" parent="settings"]
-margin_left = 352.0
-margin_top = 120.0
-margin_right = 695.0
-margin_bottom = 234.0
+margin_left = 360.0
+margin_top = 96.0
+margin_right = 639.0
+margin_bottom = 210.0
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "fullscreen"
-align = 1
 
 [node name="language" type="OptionButton" parent="settings"]
-anchor_left = -0.03125
-anchor_top = 0.0449438
-anchor_right = 0.0460938
-anchor_bottom = 0.0955056
+anchor_left = -0.04375
+anchor_top = -0.0561798
+anchor_right = 0.0335938
+anchor_bottom = -0.00561798
 margin_left = 840.0
 margin_top = 256.0
 margin_right = 869.0
@@ -204,6 +202,15 @@ selected = 0
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="music" type="Label" parent="settings"]
+margin_left = 360.0
+margin_top = 324.0
+margin_right = 678.0
+margin_bottom = 397.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "music_volume"
 
 [connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]
