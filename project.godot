@@ -16,6 +16,7 @@ run/main_scene="res://scenes/main_menu.tscn"
 [autoload]
 
 Global="*res://scripts/singleton/global.gd"
+JsonData="*res://scripts/JSONDATA.gd"
 
 [debug]
 
