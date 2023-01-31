@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://resources/img/MenuIcon.png" type="Texture" id=1]
 [ext_resource path="res://resources/Hercules.otf" type="DynamicFontData" id=2]
@@ -61,11 +61,6 @@ func _on_language_item_selected(id):
 size = 150
 outline_size = 20
 outline_color = Color( 0.470588, 0.364706, 0.188235, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 90
-outline_size = 2
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -171,24 +166,22 @@ theme = ExtResource( 5 )
 align = 1
 
 [node name="language2" type="Label" parent="settings"]
-margin_left = 344.0
+margin_left = 352.0
 margin_top = 256.0
-margin_right = 687.0
+margin_right = 695.0
 margin_bottom = 370.0
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
 text = "language"
 align = 1
 
 [node name="full_screen_l" type="Label" parent="settings"]
-margin_left = 360.0
+margin_left = 352.0
 margin_top = 120.0
-margin_right = 703.0
+margin_right = 695.0
 margin_bottom = 234.0
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 3 )
 text = "fullscreen"
 align = 1
 
