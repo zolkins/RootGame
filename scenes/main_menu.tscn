@@ -88,13 +88,13 @@ scale = Vector2( 0.596208, 0.50515 )
 texture = ExtResource( 4 )
 
 [node name="MainMenu" type="Label" parent="."]
-margin_left = 731.0
-margin_top = 20.0
-margin_right = 1688.0
-margin_bottom = 209.0
+margin_left = 703.0
+margin_top = 16.0
+margin_right = 1660.0
+margin_bottom = 205.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "Main Menu"
+text = "Root menu"
 
 [node name="NewGame" type="Button" parent="."]
 margin_left = 771.0
@@ -102,7 +102,7 @@ margin_top = 237.0
 margin_right = 1201.0
 margin_bottom = 272.0
 theme = ExtResource( 3 )
-text = "New Game"
+text = "newgame"
 
 [node name="Continue" type="Button" parent="."]
 margin_left = 771.0
@@ -110,7 +110,7 @@ margin_top = 342.0
 margin_right = 1201.0
 margin_bottom = 377.0
 theme = ExtResource( 3 )
-text = "Continue"
+text = "continue"
 
 [node name="Settings" type="Button" parent="."]
 margin_left = 771.0
@@ -118,7 +118,7 @@ margin_top = 447.0
 margin_right = 1201.0
 margin_bottom = 482.0
 theme = ExtResource( 3 )
-text = "Settings"
+text = "settings"
 
 [node name="Exit" type="Button" parent="."]
 margin_left = 771.0
@@ -126,7 +126,7 @@ margin_top = 552.0
 margin_right = 1201.0
 margin_bottom = 587.0
 theme = ExtResource( 3 )
-text = "Exit"
+text = "exit"
 
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2( 640, 360 )
@@ -189,7 +189,7 @@ margin_bottom = 234.0
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 3 )
-text = "FullScreen "
+text = "fullscreen"
 align = 1
 
 [node name="language" type="OptionButton" parent="settings"]
