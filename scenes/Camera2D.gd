@@ -2,7 +2,7 @@ extends Camera2D
 
 var zoom_min = Vector2(.35, .35)
 var zoom_max = Vector2(.6, .6)
-var zoom_speed = Vector2(.05,.05)
+var zoom_speed = Global.zoom_speed
 var des_zoom = zoom
 
 func _process(delta):
