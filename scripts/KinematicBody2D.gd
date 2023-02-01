@@ -8,18 +8,21 @@ var velocity = Vector2()
 func move():
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
+		$AnimatedSprite.set_flip_h(false)
 		velocity.x += 1
-		#_animated_sprite.play("walk_right")
+		$AnimatedSprite.play("right")
 	if Input.is_action_pressed("ui_left"):
-		#_animated_sprite.play("walk_left")
+		$AnimatedSprite.set_flip_h(true)
+		$AnimatedSprite.play("right")
 		velocity.x -= 1
 	if Input.is_action_pressed("ui_down"):
 		velocity.y += 1
+		$AnimatedSprite.play("down")
 	if Input.is_action_pressed("ui_up"):
-		#_animated_sprite.play("walk_up")
+		$AnimatedSprite.play("up")
 		velocity.y -= 1
 	if velocity.length() == 0:
-		#_animated_sprite.play("idle")
+		$AnimatedSprite.play("idle")
 		pass
 	velocity = velocity.normalized() * speed
 	move_and_slide(velocity)
