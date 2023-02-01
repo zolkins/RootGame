@@ -26,6 +26,7 @@ settings/fps/force_fps=60
 
 window/size/width=1280
 window/size/height=720
+mouse_cursor/custom_image="res://resources/img/Triangle_Mouse.png"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 
@@ -36,6 +37,7 @@ scene_naming=2
 [global]
 
 fps=false
+mouse=false
 
 [gui]
 
