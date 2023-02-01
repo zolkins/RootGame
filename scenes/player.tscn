@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Hotbar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://resources/img/player.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Camera2D.gd" type="Script" id=4]
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -160,10 +161,12 @@ animation = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 0.65, 0.65 )
 limit_left = 0
 limit_top = 0
 limit_right = 2080
 limit_bottom = 2080
+script = ExtResource( 4 )
 
 [node name="Hotbar" parent="Camera2D" instance=ExtResource( 2 )]
 position = Vector2( -186, -277 )
