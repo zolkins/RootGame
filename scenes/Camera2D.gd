@@ -6,7 +6,6 @@ var zoom_speed = Global.zoom_speed
 var des_zoom = zoom
 
 func _process(delta):
-	print(des_zoom)
 	zoom = lerp(zoom, des_zoom, .2)
 
 func _input(event):
