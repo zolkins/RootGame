@@ -37,3 +37,8 @@ func _on_Button_pressed():
 	else:
 		$Button.set_position(Vector2(120, 300))
 	pass # Replace with function body.
+
+
+func _on_Delete_pressed():
+	remove_child(holding_item)
+	pass # Replace with function body.

@@ -34,7 +34,7 @@ script = ExtResource( 5 )
 margin_left = 2.0
 margin_top = 211.0
 margin_right = 118.0
-margin_bottom = 447.0
+margin_bottom = 483.0
 texture = ExtResource( 2 )
 patch_margin_left = 3
 patch_margin_top = 3
@@ -65,7 +65,7 @@ margin_top = 11.0
 margin_right = 120.0
 margin_bottom = 25.0
 theme = ExtResource( 13 )
-text = "Shovel"
+text = "Shovel1x1"
 
 [node name="Slot 2" type="Panel" parent="Items/Texture/GridContainer"]
 margin_top = 40.0
@@ -86,7 +86,7 @@ margin_top = 11.0
 margin_right = 120.0
 margin_bottom = 25.0
 theme = ExtResource( 13 )
-text = "Shovel"
+text = "Shovel2x2"
 
 [node name="Slot 3" type="Panel" parent="Items/Texture/GridContainer"]
 margin_top = 80.0
@@ -107,7 +107,7 @@ margin_top = 11.0
 margin_right = 120.0
 margin_bottom = 25.0
 theme = ExtResource( 13 )
-text = "Shovel"
+text = "Shovel3x3"
 
 [node name="Slot 4" type="Panel" parent="Items/Texture/GridContainer"]
 margin_top = 120.0
@@ -128,7 +128,7 @@ margin_top = 11.0
 margin_right = 120.0
 margin_bottom = 25.0
 theme = ExtResource( 13 )
-text = "Shovel"
+text = "Can1x1"
 
 [node name="Slot 5" type="Panel" parent="Items/Texture/GridContainer"]
 margin_top = 160.0
@@ -149,7 +149,7 @@ margin_top = 11.0
 margin_right = 120.0
 margin_bottom = 25.0
 theme = ExtResource( 13 )
-text = "Shovel"
+text = "Can2x2"
 
 [node name="Slot 6" type="Panel" parent="Items/Texture/GridContainer"]
 margin_top = 200.0
@@ -170,7 +170,20 @@ margin_top = 11.0
 margin_right = 120.0
 margin_bottom = 25.0
 theme = ExtResource( 13 )
-text = "Shovel"
+text = "Can3x3"
+
+[node name="Delete" type="Button" parent="Items"]
+margin_left = 4.0
+margin_top = 450.0
+margin_right = 36.0
+margin_bottom = 478.0
+
+[node name="Label" type="Label" parent="Items/Delete"]
+margin_left = 44.0
+margin_top = 7.0
+margin_right = 96.0
+margin_bottom = 21.0
+text = "remove"
 
 [node name="Button" type="Button" parent="."]
 margin_top = 300.0
@@ -180,4 +193,5 @@ theme = ExtResource( 12 )
 custom_fonts/font = SubResource( 2 )
 text = "invent"
 
+[connection signal="pressed" from="Items/Delete" to="." method="_on_Delete_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
