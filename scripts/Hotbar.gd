@@ -34,7 +34,7 @@ func _input(event):
 func _on_Button_pressed():
 	$Items.set_visible(!$Items.is_visible())
 	if !$Items.is_visible():
-		$Slider.set_position(Vector2(0, 300))
+		$Slider.set_position(Vector2(-3, 300))
 	else:
 		$Slider.set_position(Vector2(120, 300))
 	pass # Replace with function body.

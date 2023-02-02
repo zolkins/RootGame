@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (int) var speed = 300
+export (int) var speed = 200
 #onready var _animated_sprite = $animated_sprite
 var velocity = Vector2()
 
@@ -8,7 +8,6 @@ var velocity = Vector2()
 func move():
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
-		print("a")
 		$AnimatedSprite.set_flip_h(false)
 		velocity.x += 1
 		$AnimatedSprite.play("right")
@@ -34,7 +33,7 @@ func move():
 
 func _on_CanvasLayer2_use_move_vector(move_vector):
 	velocity = move_vector.normalized()*speed
-	move_and_slide(move_vector.normalized()*speed)
+	move_and_slide(velocity)
 	if velocity.x > 0:
 		$AnimatedSprite.set_flip_h(false)
 		$AnimatedSprite.play("right")
@@ -42,7 +41,6 @@ func _on_CanvasLayer2_use_move_vector(move_vector):
 		$AnimatedSprite.set_flip_h(true)
 		$AnimatedSprite.play("right")
 	elif velocity.y > 0:
-		print("aa")
 		$AnimatedSprite.play("down")
 	elif velocity.y < 0:
 		$AnimatedSprite.play("up")
