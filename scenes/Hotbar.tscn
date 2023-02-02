@@ -185,13 +185,13 @@ margin_right = 96.0
 margin_bottom = 21.0
 text = "remove"
 
-[node name="Button" type="Button" parent="."]
+[node name="Slider" type="Button" parent="."]
 margin_top = 300.0
-margin_right = 128.71
+margin_right = 129.0
 margin_bottom = 351.28
 theme = ExtResource( 12 )
 custom_fonts/font = SubResource( 2 )
 text = "invent"
 
 [connection signal="pressed" from="Items/Delete" to="." method="_on_Delete_pressed"]
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Slider" to="." method="_on_Button_pressed"]
