@@ -30,6 +30,7 @@ func _input(event):
 		holding_item.global_position = get_global_mouse_position()
 
 
+<<<<<<< HEAD
 func _on_Button_pressed():
 	$Items.set_visible(!$Items.is_visible())
 	if !$Items.is_visible():
@@ -39,6 +40,19 @@ func _on_Button_pressed():
 	pass # Replace with function body.
 
 
+=======
+>>>>>>> cc01228004646be0ab33cc9803d69f5a00f1132c
 func _on_Delete_pressed():
 	remove_child(holding_item)
 	pass # Replace with function body.
+
+
+func _on_Slider_pressed():
+	$Items.set_visible(!$Items.is_visible())
+	if !$Items.is_visible():
+		$Slider.set_position(Vector2(-10, 300))
+		$Slider.set_flip_h(false)
+	else:
+		$Slider.set_position(Vector2(105, 300))
+		$Slider.set_flip_h(true)
+
