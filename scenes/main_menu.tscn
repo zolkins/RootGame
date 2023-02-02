@@ -12,13 +12,10 @@ script/source = "extends Control
 
 var newMap = \"res://scenes/map.tscn\"
 var continueMap = \"res://scenes/map.tscn\"
-var music_volume:float
+
 
 func _ready():
-	#Установка показателей для слайдера
-	music_volume = AudioServer.get_bus_volume_db(AudioServer.get_bus_index(\"Master\"))
-	$settings/music_volume_int.text = (str(music_volume) + \"%\")
-	$settings/music_volume.value = music_volume
+	pass # Replace with function body.
 
 
 
@@ -59,16 +56,6 @@ func _on_language_item_selected(id):
 	else:
 		Global.languge = \"en\"
 	TranslationServer.set_locale(Global.languge)
-
-
-func _on_music_volume_value_changed(value):
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(\"Master\"), value)
-	$settings/music_volume_int.text = (str(value) + \"%\")
-
-
-func _on_speed_scroll_camera2_value_changed(value):
-	Global.zoom_speed = Vector2(value, value)
-	$settings/speed_scroll_float.text = str(value)
 "
 
 [sub_resource type="DynamicFont" id=2]
