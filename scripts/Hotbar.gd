@@ -1,10 +1,11 @@
 extends Node2D
 
 const SlotClass = preload("res://scripts/Slot.gd")
-onready var inventory_slots = $GridContainer
+onready var inventory_slots = $Items/Texture/ScrollContainer/GridContainer
 var holding_item = null
 
 func _ready():
+	$Items.set_visible(false)
 	for inv_slot in inventory_slots.get_children():
 		inv_slot.connect("gui_input", self, "slot_gui_input", [inv_slot]) 
 	
@@ -33,8 +34,7 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 						else:
 							slot.item.add_item_quantity(able_to_add)
 							holding_item.decrease_item_quantity(able_to_add)
-			
-			elif slot.item:
+			else:
 				holding_item = slot.item
 				slot.pickFromSlot()
 				holding_item.global_position = get_global_mouse_position()
@@ -42,3 +42,8 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 func _input(event):
 	if holding_item:
 		holding_item.global_position = get_global_mouse_position()
+
+
+func _on_Button_pressed():
+	$Items.set_visible(!$Items.is_visible())
+	pass # Replace with function body.
