@@ -12,41 +12,33 @@ script/source = "extends Control
 
 var newMap = \"res://scenes/map.tscn\"
 var continueMap = \"res://scenes/map.tscn\"
-
+var music_volume:float
 
 func _ready():
-	pass # Replace with function body.
+	#Установка показателей для слайдера
+	music_volume = AudioServer.get_bus_volume_db(AudioServer.get_bus_index(\"Master\"))
+	$settings/music_volume_int.text = (str(music_volume) + \"%\")
+	$settings/music_volume.value = music_volume
 
 
 
 func _on_NewGame_pressed():
 	get_tree().change_scene(newMap)
-
-
 func _on_Continue_pressed():
 	get_tree().change_scene(continueMap)
-
-
 func _on_Settings_pressed():
 	$Tween.interpolate_property($camera, \"position\", $camera.position, Vector2(640, 1800), 1, Tween.TRANS_SINE, Tween.EASE_OUT)
 	$Tween.start()
-
-
 func _on_Exit_pressed():
 	get_tree().quit()
 	
-
 # Settings_part
 func _on_settings_back_pressed():
 	$Tween.interpolate_property($camera, \"position\", $camera.position, Vector2(640, 360), 1, Tween.TRANS_SINE, Tween.EASE_OUT)
 	$Tween.start()
 	
-
-
-
 func _on_full_screen_b_toggled(toggle):
 	OS.window_fullscreen = toggle
-
 # 0 - ua || 1 - sru || 2 - en
 func _on_language_item_selected(id):
 	if id == 0:
@@ -56,6 +48,16 @@ func _on_language_item_selected(id):
 	else:
 		Global.languge = \"en\"
 	TranslationServer.set_locale(Global.languge)
+
+
+func _on_music_volume_value_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(\"Master\"), value)
+	$settings/music_volume_int.text = (str(value) + \"%\")
+
+
+func _on_speed_scroll_camera2_value_changed(value):
+	Global.zoom_speed = Vector2(value, value)
+	$settings/speed_scroll_float.text = str(value)
 "
 
 [sub_resource type="DynamicFont" id=2]
