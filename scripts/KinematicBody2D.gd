@@ -8,6 +8,7 @@ var velocity = Vector2()
 func move():
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
+		print("a")
 		$AnimatedSprite.set_flip_h(false)
 		velocity.x += 1
 		$AnimatedSprite.play("right")
@@ -27,5 +28,25 @@ func move():
 	velocity = velocity.normalized() * speed
 	move_and_slide(velocity)
 
-func _process(_delta):
-	move()
+#func _process(_delta):
+#	move()
+
+
+func _on_CanvasLayer2_use_move_vector(move_vector):
+	velocity = move_vector.normalized()*speed
+	move_and_slide(move_vector.normalized()*speed)
+	if velocity.x > 0:
+		$AnimatedSprite.set_flip_h(false)
+		$AnimatedSprite.play("right")
+	elif velocity.x < 0:
+		$AnimatedSprite.set_flip_h(true)
+		$AnimatedSprite.play("right")
+	elif velocity.y > 0:
+		print("aa")
+		$AnimatedSprite.play("down")
+	elif velocity.y < 0:
+		$AnimatedSprite.play("up")
+
+
+func _on_CanvasLayer2_not_move():
+	$AnimatedSprite.play("idle")

@@ -34,10 +34,8 @@ func _on_Button_pressed():
 	$Items.set_visible(!$Items.is_visible())
 	if !$Items.is_visible():
 		$Slider.set_position(Vector2(0, 300))
-		print("1")
 	else:
 		$Slider.set_position(Vector2(120, 300))
-		print("2")
 	pass # Replace with function body.
 
 

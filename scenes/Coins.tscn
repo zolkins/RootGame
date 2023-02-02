@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Coins.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Coins.gd" type="Script" id=1]
 [ext_resource path="res://resources/m5x7.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://resources/img/coin.png" type="Texture" id=3]
 
