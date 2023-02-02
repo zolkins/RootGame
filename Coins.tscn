@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Coins.gd" type="Script" id=1]
+[ext_resource path="res://resources/m5x7.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://resources/img/coin.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Coins" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 151.0
+margin_bottom = 50.0
+color = Color( 0.847059, 0.992157, 0.141176, 1 )
+
+[node name="Coin" type="Sprite" parent="."]
+position = Vector2( 24, 28 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 54.0
+margin_top = 7.0
+margin_right = 108.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 1 )
+text = "100"
+script = ExtResource( 1 )

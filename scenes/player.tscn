@@ -169,7 +169,7 @@ limit_bottom = 2080
 script = ExtResource( 4 )
 
 [node name="Hotbar" parent="Camera2D" instance=ExtResource( 2 )]
-position = Vector2( -186, -277 )
+position = Vector2( -214, -173 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 8 )
