@@ -20,9 +20,9 @@ func _input(event):
 			$InnerCircle.visible = false
 			
 func _physics_process(_delta):
-	if joystick_active:
+	if joystick_active and Global.is_phone:
 		emit_signal("use_move_vector", move_vector)
-	else:
+	elif Global.is_phone:
 		emit_signal("not_move")
 		
 			
