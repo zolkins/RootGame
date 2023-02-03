@@ -9,4 +9,5 @@ func _ready():
 		$'.'.get_child(1).text = $'.'.get_child(0).name
 	
 func Selected():
+	Select.set_visible(true)
 	Select.set_position($"..".get_position() + $'.'.get_position() + Vector2(19, 20))
