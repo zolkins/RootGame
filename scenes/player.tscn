@@ -196,6 +196,7 @@ expand = true
 visible = false
 
 [connection signal="dig" from="CanvasLayer/Shop" to="." method="_on_Shop_dig"]
+[connection signal="selec" from="CanvasLayer/Shop" to="." method="_on_Shop_selec"]
 [connection signal="pressed" from="CanvasLayer/go_to_settings" to="." method="_on_go_to_settings_pressed"]
 [connection signal="not_move" from="CanvasLayer2" to="." method="_on_CanvasLayer2_not_move"]
 [connection signal="use_move_vector" from="CanvasLayer2" to="." method="_on_CanvasLayer2_use_move_vector"]

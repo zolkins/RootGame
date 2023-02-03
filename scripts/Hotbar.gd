@@ -6,6 +6,7 @@ var holding_item = null
 var i = 0
 
 signal dig
+signal selec
 
 func _ready():
 	$Items.set_visible(false)
@@ -32,6 +33,7 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 func _input(event):
 	if holding_item:
 		holding_item.global_position = get_global_mouse_position()
+		emit_signal("selec")
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT && event.pressed:
 			if holding_item:
