@@ -66,7 +66,11 @@ func _on_Shop_dig():
 		$"../predmeti".set_cell(map_position.x, map_position.y, -1)
 		
 func _on_Shop_selec():
+	$"../Select".set_visible(true)
 	var map_position = $"../Select".world_to_map(get_global_mouse_position())
 	var tileid = $"../Select".tile_set.find_tile_by_name("1")
 	$"../Select".clear()
 	$"../Select".set_cell(map_position.x, map_position.y, tileid)
+	
+func _on_Shop_del():
+	$"../Select".set_visible(false)

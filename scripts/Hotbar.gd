@@ -6,6 +6,7 @@ var holding_item = null
 var i = 0
 
 signal dig
+signal del
 signal selec
 
 func _ready():
@@ -65,6 +66,7 @@ func _on_Delete_pressed():
 	remove_child(holding_item)
 	holding_item = null
 	$Items/Select.set_visible(false)
+	emit_signal("del")
 	pass # Replace with function body.
 
 
