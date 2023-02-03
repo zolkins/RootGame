@@ -39,7 +39,6 @@ func _on_settings_back_pressed():
 	
 func _on_full_screen_b_toggled(toggle):
 	OS.window_fullscreen = toggle
-	print(toggle)
 # 0 - ua || 1 - sru || 2 - en
 func _on_language_item_selected(id):
 	if id == 0:
@@ -59,9 +58,6 @@ func _on_music_volume_value_changed(value):
 func _on_speed_scroll_camera2_value_changed(value):
 	Global.zoom_speed = Vector2(value, value)
 	$settings/speed_scroll_float.text = str(value)
-
-func _on_joy_stick_b_toggled(toggle):
-	Global.is_phone = toggle
 "
 
 [sub_resource type="DynamicFont" id=2]
@@ -147,7 +143,6 @@ text = "exit"
 
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2( 640, 360 )
-current = true
 
 [node name="Tween" type="Tween" parent="."]
 

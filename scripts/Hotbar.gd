@@ -5,6 +5,8 @@ onready var inventory_slots = $Items/GridContainer
 var holding_item = null
 var i = 0
 
+signal dig
+
 func _ready():
 	$Items.set_visible(false)
 	for inv_slot in inventory_slots.get_children():
@@ -34,7 +36,7 @@ func _input(event):
 		if event.button_index == BUTTON_LEFT && event.pressed:
 			if holding_item:
 				if holding_item.name == "Shovel1x1":
-					$predmeti.set_cell(get_global_mouse_position().x, get_global_mouse_position().y, 1)
+					emit_signal("dig")
 
 func _process(delta):
 	if $Items/Select.is_visible():

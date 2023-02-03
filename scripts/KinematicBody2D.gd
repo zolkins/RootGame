@@ -4,7 +4,6 @@ export (int) var speed = 200
 #onready var _animated_sprite = $animated_sprite
 var velocity = Vector2()
 
-
 # Ходьба
 func move():
 	velocity = Vector2()
@@ -35,8 +34,6 @@ func _process(_delta):
 		$CanvasLayer2.hide()
 		move()
 
-
-
 func _on_CanvasLayer2_use_move_vector(move_vector):
 	velocity = move_vector.normalized()*speed
 	move_and_slide(velocity)
@@ -58,3 +55,9 @@ func _on_CanvasLayer2_not_move():
 
 func _on_go_to_settings_pressed():
 	Global.coins -= 15
+
+
+func _on_Shop_dig():
+	var map_position = $"../predmeti".world_to_map(get_global_mouse_position())
+	var tileid = $"../predmeti".tile_set.find_tile_by_name("Dirt")
+	$"../predmeti".set_cell(map_position.x, map_position.y, tileid)
