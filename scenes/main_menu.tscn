@@ -59,6 +59,9 @@ func _on_music_volume_value_changed(value):
 func _on_speed_scroll_camera2_value_changed(value):
 	Global.zoom_speed = Vector2(value, value)
 	$settings/speed_scroll_float.text = str(value)
+
+func _on_joy_stick_b_toggled(toggle):
+	Global.is_phone = toggle
 "
 
 [sub_resource type="DynamicFont" id=2]
