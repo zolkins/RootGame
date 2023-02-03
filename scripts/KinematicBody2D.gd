@@ -54,3 +54,7 @@ func _on_CanvasLayer2_use_move_vector(move_vector):
 
 func _on_CanvasLayer2_not_move():
 	$AnimatedSprite.play("idle")
+
+
+func _on_go_to_settings_pressed():
+	Global.coins -= 15
