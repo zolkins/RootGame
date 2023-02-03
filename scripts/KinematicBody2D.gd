@@ -60,4 +60,7 @@ func _on_go_to_settings_pressed():
 func _on_Shop_dig():
 	var map_position = $"../predmeti".world_to_map(get_global_mouse_position())
 	var tileid = $"../predmeti".tile_set.find_tile_by_name("Dirt")
-	$"../predmeti".set_cell(map_position.x, map_position.y, tileid)
+	if !($"../predmeti".get_cell(map_position.x, map_position.y) == tileid):
+		$"../predmeti".set_cell(map_position.x, map_position.y, tileid)
+	else:
+		$"../predmeti".set_cell(map_position.x, map_position.y, -1)
