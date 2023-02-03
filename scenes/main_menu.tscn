@@ -143,6 +143,7 @@ text = "exit"
 
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2( 640, 360 )
+current = true
 
 [node name="Tween" type="Tween" parent="."]
 
