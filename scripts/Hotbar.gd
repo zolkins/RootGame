@@ -30,6 +30,11 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 func _input(event):
 	if holding_item:
 		holding_item.global_position = get_global_mouse_position()
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT && event.pressed:
+			if holding_item:
+				if holding_item.name == "Shovel1x1":
+					$predmeti.set_cell(get_global_mouse_position().x, get_global_mouse_position().y, 1)
 
 func _process(delta):
 	if $Items/Select.is_visible():
@@ -41,7 +46,6 @@ func _process(delta):
 			yield(get_tree().create_timer(0.5), "timeout")
 			$Items/Select.set_scale(Vector2(1.75, 1.75))
 			i = 0
-
 
 func _on_Button_pressed():
 	$Items.set_visible(!$Items.is_visible())
