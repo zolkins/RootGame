@@ -2,6 +2,7 @@ extends Node2D
 
 const SlotClass = preload("res://scripts/Slot.gd")
 onready var inventory_slots = $Items/GridContainer
+onready var sfx = $sfx
 var holding_item = null
 var i = 0
 
@@ -63,6 +64,8 @@ func _on_Button_pressed():
 
 
 func _on_Delete_pressed():
+	sfx.stream = preload("res://resources/mp3/sfx/remove.wav")
+	sfx.play()
 	remove_child(holding_item)
 	holding_item = null
 	$Items/Select.set_visible(false)
@@ -71,9 +74,11 @@ func _on_Delete_pressed():
 
 
 func _on_Slider_pressed():
+	sfx.stream = preload("res://resources/mp3/sfx/any_in_settings.mp3")
+	sfx.play()
 	$Items.set_visible(!$Items.is_visible())
 	if !$Items.is_visible():
-		$Slider.set_position(Vector2(-10, 300))
+		$Slider.set_position(Vector2(-3, 300))
 		$Slider.set_flip_h(false)
 	else:
 		$Slider.set_position(Vector2(105, 300))

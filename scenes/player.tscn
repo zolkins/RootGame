@@ -182,6 +182,8 @@ expand = true
 
 [node name="CanvasLayer2" parent="." instance=ExtResource( 6 )]
 
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+
 [node name="Foot_step" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
 bus = "SFX"
