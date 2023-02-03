@@ -55,6 +55,7 @@ func _on_Button_pressed():
 
 func _on_Delete_pressed():
 	remove_child(holding_item)
+	holding_item = null
 	$Items/Select.set_visible(false)
 	pass # Replace with function body.
 
