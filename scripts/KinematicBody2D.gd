@@ -60,10 +60,11 @@ func _on_go_to_settings_pressed():
 func _on_Shop_dig():
 	var map_position = $"../predmeti".world_to_map(get_global_mouse_position())
 	var tileid = $"../predmeti".tile_set.find_tile_by_name("Dirt")
-	if !($"../predmeti".get_cell(map_position.x, map_position.y) == tileid):
-		$"../predmeti".set_cell(map_position.x, map_position.y, tileid)
-	else:
-		$"../predmeti".set_cell(map_position.x, map_position.y, -1)
+	if !(get_local_mouse_position().x > -415 && get_local_mouse_position().x < -340 && get_local_mouse_position().y > -100 && get_local_mouse_position().y < 80):
+		if !($"../predmeti".get_cell(map_position.x, map_position.y) == tileid):
+			$"../predmeti".set_cell(map_position.x, map_position.y, tileid)
+		else:
+			$"../predmeti".set_cell(map_position.x, map_position.y, -1)
 		
 func _on_Shop_selec():
 	$"../Select".set_visible(true)
