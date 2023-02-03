@@ -3,6 +3,7 @@ extends KinematicBody2D
 export (int) var speed = 200
 #onready var _animated_sprite = $animated_sprite
 var velocity = Vector2()
+var placable = false
 
 # Ходьба
 func move():
@@ -60,7 +61,7 @@ func _on_go_to_settings_pressed():
 func _on_Shop_dig():
 	var map_position = $"../predmeti".world_to_map(get_global_mouse_position())
 	var tileid = $"../predmeti".tile_set.find_tile_by_name("Dirt")
-	if !(get_local_mouse_position().x > -415 && get_local_mouse_position().x < -340 && get_local_mouse_position().y > -100 && get_local_mouse_position().y < 80):
+	if !Global.is_in_invent:
 		if !($"../predmeti".get_cell(map_position.x, map_position.y) == tileid):
 			$"../predmeti".set_cell(map_position.x, map_position.y, tileid)
 		else:
@@ -75,3 +76,4 @@ func _on_Shop_selec():
 	
 func _on_Shop_del():
 	$"../Select".set_visible(false)
+

@@ -79,3 +79,11 @@ func _on_Slider_pressed():
 		$Slider.set_position(Vector2(105, 300))
 		$Slider.set_flip_h(true)
 
+
+
+func _on_Area2D_mouse_entered():
+	Global.is_in_invent = true
+
+func _on_Area2D_mouse_exited():
+	Global.is_in_invent = false
+
