@@ -19,7 +19,7 @@ func _ready():
 	Global.music_volume = AudioServer.get_bus_volume_db(AudioServer.get_bus_index(\"Music\"))
 	$settings/music_volume_int.text = (str(Global.music_volume) + \"%\")
 	$settings/music_volume.value = Global.music_volume
-	print(Global.music_volume)
+
 
 
 
