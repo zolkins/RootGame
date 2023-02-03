@@ -1,17 +1,13 @@
 extends Panel
 
 var item = null
+onready var Select = $"../../Select"
 
 func _ready():
 	if $'.'.get_child(0):
 		item = $'.'.get_child(0)
 		$'.'.get_child(1).text = $'.'.get_child(0).name
 	
-#func putIntoSlot(new_item):
-#	item = new_item
-#	item.position = Vector2(0, 0)
-#	var inventoryNode = find_parent("Shop")
-#	inventoryNode.remove_child(item)
-#	add_child(item)
-#	item.move_local_x(18)
-#	item.move_local_y(18)
+func Selected():
+	Select.set_visible(true)
+	Select.set_position($"..".get_position() + $'.'.get_position() + Vector2(19, 20))

@@ -34,7 +34,7 @@ func _process(_delta):
 	else:
 		$CanvasLayer2.hide()
 		move()
-	
+
 
 
 func _on_CanvasLayer2_use_move_vector(move_vector):
