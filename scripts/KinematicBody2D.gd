@@ -61,19 +61,28 @@ func _on_go_to_settings_pressed():
 func _on_Shop_dig():
 	var map_position = $"../predmeti".world_to_map(get_global_mouse_position())
 	var tileid = $"../predmeti".tile_set.find_tile_by_name("Dirt")
-	if !Global.is_in_invent:
+	if Global.is_near:
 		if !($"../predmeti".get_cell(map_position.x, map_position.y) == tileid):
 			$"../predmeti".set_cell(map_position.x, map_position.y, tileid)
 		else:
 			$"../predmeti".set_cell(map_position.x, map_position.y, -1)
 		
 func _on_Shop_selec():
-	$"../Select".set_visible(true)
-	var map_position = $"../Select".world_to_map(get_global_mouse_position())
-	var tileid = $"../Select".tile_set.find_tile_by_name("1")
-	$"../Select".clear()
-	$"../Select".set_cell(map_position.x, map_position.y, tileid)
+	if Global.is_near:
+		$"../Select".set_visible(true)
+		var map_position = $"../Select".world_to_map(get_global_mouse_position())
+		var tileid = $"../Select".tile_set.find_tile_by_name("1")
+		$"../Select".clear()
+		$"../Select".set_cell(map_position.x, map_position.y, tileid)
 	
 func _on_Shop_del():
 	$"../Select".set_visible(false)
 
+
+
+func _on_Area2D_mouse_entered():
+	Global.is_near = true
+
+
+func _on_Area2D_mouse_exited():
+	Global.is_near = false
