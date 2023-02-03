@@ -4,6 +4,7 @@ export (int) var speed = 200
 #onready var _animated_sprite = $animated_sprite
 var velocity = Vector2()
 
+
 # Ходьба
 func move():
 	velocity = Vector2()
@@ -27,8 +28,13 @@ func move():
 	velocity = velocity.normalized() * speed
 	move_and_slide(velocity)
 
-#func _process(_delta):
-#	move()
+func _process(_delta):
+	if Global.is_phone:
+		$CanvasLayer2.show()
+	else:
+		$CanvasLayer2.hide()
+		move()
+	
 
 
 func _on_CanvasLayer2_use_move_vector(move_vector):
