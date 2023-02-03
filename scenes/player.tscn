@@ -8,98 +8,122 @@
 [ext_resource path="res://scenes/joystick.tscn" type="PackedScene" id=6]
 
 [sub_resource type="AtlasTexture" id=2]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 144, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=3]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 48, 144, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=4]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 96, 144, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=5]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 144, 144, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=6]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 192, 144, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=7]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 240, 144, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=8]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=9]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 48, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=10]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 96, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=11]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 144, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=12]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 192, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=13]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 240, 0, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=14]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 192, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=15]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 48, 192, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=16]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 96, 192, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=17]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 144, 192, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=18]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 192, 192, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=19]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 240, 192, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=20]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 240, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=21]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 48, 240, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=22]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 96, 240, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=23]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 144, 240, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=24]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 192, 240, 48, 48 )
 
 [sub_resource type="AtlasTexture" id=25]
+flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 240, 240, 48, 48 )
 
@@ -157,6 +181,7 @@ shape = SubResource( 1 )
 [node name="Coins" parent="CanvasLayer" instance=ExtResource( 2 )]
 
 [node name="CanvasLayer2" parent="." instance=ExtResource( 6 )]
+visible = false
 
 [connection signal="not_move" from="CanvasLayer2" to="." method="_on_CanvasLayer2_not_move"]
 [connection signal="use_move_vector" from="CanvasLayer2" to="." method="_on_CanvasLayer2_use_move_vector"]

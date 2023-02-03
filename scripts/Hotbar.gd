@@ -1,7 +1,7 @@
 extends Node2D
 
 const SlotClass = preload("res://scripts/Slot.gd")
-onready var inventory_slots = $Items/Texture/GridContainer
+onready var inventory_slots = $Items/GridContainer
 var holding_item = null
 
 func _ready():
@@ -12,6 +12,7 @@ func _ready():
 func slot_gui_input(event: InputEvent, slot: SlotClass):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT && event.pressed:
+			slot.Selected()
 			if holding_item == null:
 				holding_item = slot.item.duplicate()
 				add_child(holding_item)

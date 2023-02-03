@@ -27,8 +27,8 @@ func move():
 	velocity = velocity.normalized() * speed
 	move_and_slide(velocity)
 
-#func _process(_delta):
-#	move()
+func _process(_delta):
+	move()
 
 
 func _on_CanvasLayer2_use_move_vector(move_vector):
