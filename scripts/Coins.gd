@@ -1,8 +1,6 @@
 extends Label
 
-func _ready():
+
+func _process(delta):
 	text = str(Global.coins)
-	pass # Replace with function body.
-
-
-
+	$"../ColorRect".set_size(Vector2($".".get_size().x+65,45))

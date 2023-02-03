@@ -39,6 +39,7 @@ func _on_settings_back_pressed():
 	
 func _on_full_screen_b_toggled(toggle):
 	OS.window_fullscreen = toggle
+	print(toggle)
 # 0 - ua || 1 - sru || 2 - en
 func _on_language_item_selected(id):
 	if id == 0:
@@ -58,6 +59,9 @@ func _on_music_volume_value_changed(value):
 func _on_speed_scroll_camera2_value_changed(value):
 	Global.zoom_speed = Vector2(value, value)
 	$settings/speed_scroll_float.text = str(value)
+
+func _on_joy_stick_b_toggled(toggle):
+	Global.is_phone = toggle
 "
 
 [sub_resource type="DynamicFont" id=2]
@@ -246,31 +250,47 @@ text = "60%"
 
 [node name="speed_scroll_camera" type="Label" parent="settings"]
 margin_left = 360.0
-margin_top = 392.0
+margin_top = 397.0
 margin_right = 887.0
-margin_bottom = 465.0
+margin_bottom = 470.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 6 )
 text = "speed_scroll_camera"
 
 [node name="speed_scroll_float" type="Label" parent="settings"]
 margin_left = 1064.0
-margin_top = 384.0
+margin_top = 389.0
 margin_right = 1113.0
-margin_bottom = 449.0
+margin_bottom = 454.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 7 )
 text = "0.01"
 
 [node name="speed_scroll_camera2" type="HSlider" parent="settings"]
 margin_left = 856.0
-margin_top = 408.0
+margin_top = 413.0
 margin_right = 1032.0
-margin_bottom = 424.0
+margin_bottom = 429.0
 min_value = 0.01
 max_value = 0.2
 step = 0.01
 value = 0.05
+
+[node name="joy_stick_l" type="Label" parent="settings"]
+margin_left = 360.0
+margin_top = 468.0
+margin_right = 585.0
+margin_bottom = 541.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "joy_stick"
+
+[node name="joy_stick_b" type="CheckButton" parent="settings"]
+margin_left = 888.0
+margin_top = 454.0
+margin_right = 1000.0
+margin_bottom = 552.0
+theme = ExtResource( 5 )
 
 [connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]
@@ -281,3 +301,4 @@ value = 0.05
 [connection signal="item_selected" from="settings/language" to="." method="_on_language_item_selected"]
 [connection signal="value_changed" from="settings/music_volume" to="." method="_on_music_volume_value_changed"]
 [connection signal="value_changed" from="settings/speed_scroll_camera2" to="." method="_on_speed_scroll_camera2_value_changed"]
+[connection signal="toggled" from="settings/joy_stick_b" to="." method="_on_joy_stick_b_toggled"]
