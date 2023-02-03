@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Coins.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/joystick.tscn" type="PackedScene" id=6]
 [ext_resource path="res://resources/img/PotatoSeeds.png" type="Texture" id=7]
 [ext_resource path="res://resources/mp3/music/Space Jazz.mp3" type="AudioStream" id=8]
+[ext_resource path="res://resources/mp3/sfx/FootStep Grass 01.wav" type="AudioStream" id=9]
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
@@ -180,13 +181,19 @@ texture_normal = ExtResource( 7 )
 expand = true
 
 [node name="CanvasLayer2" parent="." instance=ExtResource( 6 )]
-visible = false
+
+[node name="Foot_step" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+bus = "SFX"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 volume_db = -80.0
 autoplay = true
 bus = "Music"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="mouse_entered" from="AnimatedSprite/Area2D" to="." method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="AnimatedSprite/Area2D" to="." method="_on_Area2D_mouse_exited"]

@@ -3,7 +3,7 @@ extends KinematicBody2D
 export (int) var speed = 200
 #onready var _animated_sprite = $animated_sprite
 var velocity = Vector2()
-var placable = false
+onready var fss = $Foot_step
 
 # Ходьба
 func move():
@@ -24,9 +24,15 @@ func move():
 		velocity.y -= 1
 	if velocity.length() == 0:
 		$AnimatedSprite.play("idle")
-		pass
+	else:
+		if $Timer.time_left <=0:
+			fss.pitch_scale = rand_range(0.8, 1.2)
+			fss.play()
+			$Timer.start(0.3)
+		
 	velocity = velocity.normalized() * speed
 	move_and_slide(velocity)
+
 
 func _process(_delta):
 	if Global.is_phone:
@@ -48,6 +54,10 @@ func _on_CanvasLayer2_use_move_vector(move_vector):
 		$AnimatedSprite.play("down")
 	elif velocity.y < 0:
 		$AnimatedSprite.play("up")
+	if $Timer.time_left <=0:
+		fss.pitch_scale = rand_range(0.8, 1.2)
+		fss.play()
+		$Timer.start(0.3)
 
 
 func _on_CanvasLayer2_not_move():
