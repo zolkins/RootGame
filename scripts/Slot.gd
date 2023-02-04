@@ -14,3 +14,9 @@ func Selected():
 	sfx.play()
 	Select.set_visible(true)
 	Select.set_position($"..".get_position() + $'.'.get_position() + Vector2(19, 20))
+	#playerItem.set_position()
+
+func PlayerItem(PlayerImg):
+	PlayerImg.set_visible(true)
+	PlayerImg.set_texture(item.get_texture())
+	
