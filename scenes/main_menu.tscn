@@ -71,8 +71,10 @@ func _on_language_item_selected(id):
 
 
 func _on_music_volume_value_changed(value):
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(\"Music\"), value)
-	$settings/music_volume_int.text = (str(value) + \"%\")
+	Global.music_volume = value
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(\"Music\"), Global.music_volume)
+	$settings/music_volume_int.text = (str(Global.music_volume) + \"%\")
+	
 
 
 func _on_speed_scroll_camera2_value_changed(value):
