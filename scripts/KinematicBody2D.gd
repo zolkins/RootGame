@@ -88,7 +88,12 @@ func _on_Shop_selec():
 func _on_Shop_del():
 	$"../Select".set_visible(false)
 
-
+func _on_Shop_touch():
+	var map_position = $"../predmeti".world_to_map(get_global_mouse_position())
+	var tileid = $"../predmeti".tile_set.find_tile_by_name("Dirt")
+	print("aaa")
+	if $"../predmeti".get_cell(map_position.x, map_position.y) == tileid:
+			$CanvasLayer/DirtShop.set_position(get_global_mouse_position())
 
 func _on_Area2D_mouse_entered():
 	Global.is_near = true
@@ -96,3 +101,6 @@ func _on_Area2D_mouse_entered():
 
 func _on_Area2D_mouse_exited():
 	Global.is_near = false
+
+
+

@@ -1,13 +1,18 @@
-[gd_resource type="Theme" load_steps=6 format=2]
+[gd_resource type="Theme" load_steps=8 format=2]
 
 [ext_resource path="res://resources/Hercules.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://resources/img/CheckBoxoff.png" type="Texture" id=2]
 [ext_resource path="res://resources/img/CheckBox10.png" type="Texture" id=3]
+[ext_resource path="res://resources/img/slotTexture.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxTexture" id=3]
 
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 32, 32 )
 
 [resource]
 CheckButton/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
@@ -50,3 +55,4 @@ OptionButton/styles/focus = null
 OptionButton/styles/hover = null
 OptionButton/styles/normal = null
 OptionButton/styles/pressed = null
+Panel/styles/panel = SubResource( 4 )
