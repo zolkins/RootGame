@@ -5,6 +5,8 @@ export (int) var speed = 200
 var velocity = Vector2()
 onready var fss = $Foot_step
 
+var rand_m:int
+
 # Ходьба
 func move():
 	velocity = Vector2()
@@ -100,5 +102,24 @@ func _on_Area2D_mouse_entered():
 func _on_Area2D_mouse_exited():
 	Global.is_near = false
 
-
-
+func _on_Music_finished():
+	rand_m = rand_range(0,9)
+	if rand_m == 0:
+		$Music.stream = preload("res://resources/mp3/music/Space Jazz.mp3")
+	elif rand_m == 1:
+		$Music.stream = preload("res://resources/mp3/music/Adventure pack 1 ogg/Going Up.ogg")
+	elif rand_m == 2:
+		$Music.stream = preload("res://resources/mp3/music/Adventure pack 1 ogg/arcade.ogg")
+	elif rand_m == 3:
+		$Music.stream = preload("res://resources/mp3/music/Adventure pack 1 ogg/chibi-robot-b.ogg")
+	elif rand_m == 4:
+		$Music.stream = preload("res://resources/mp3/music/Adventure pack 1 ogg/dark-happy-world.ogg")
+	elif rand_m == 5:
+		$Music.stream = preload("res://resources/mp3/music/Adventure pack 1 ogg/exploration.ogg")
+	elif rand_m == 6:
+		$Music.stream = preload("res://resources/mp3/music/Adventure pack 1 ogg/fantasy Dragon.ogg")
+	elif rand_m == 7:
+		$Music.stream = preload("res://resources/mp3/music/Adventure pack 1 ogg/happywalking.ogg")
+	elif rand_m == 8:
+		$Music.stream = preload("res://resources/mp3/music/Adventure pack 1 ogg/hurry_up_and_run.ogg")
+	$Music.play()
