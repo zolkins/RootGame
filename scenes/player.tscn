@@ -202,6 +202,7 @@ shape = SubResource( 1 )
 [node name="Coins" parent="CanvasLayer" instance=ExtResource( 2 )]
 
 [node name="Pause_menu" type="Control" parent="CanvasLayer"]
+visible = false
 margin_left = 456.0
 margin_top = 88.0
 margin_right = 500.0
@@ -211,7 +212,7 @@ rect_scale = Vector2( 9, 7.738 )
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Pause_menu"]
 margin_left = -51.0
 margin_top = -11.0
-margin_right = 91.0
+margin_right = 92.0
 margin_bottom = 84.0
 color = Color( 0, 0, 0, 0.607843 )
 
