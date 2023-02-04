@@ -6,6 +6,7 @@ var velocity = Vector2()
 onready var fss = $Foot_step
 var map_pos = null
 var plant_map = {}
+var m_in_zabor = false
 
 
 var rand_m:int
@@ -79,13 +80,13 @@ func _on_CanvasLayer2_not_move():
 func _on_Shop_dig():
 	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
 	var tileid = $"../Sajanie".tile_set.find_tile_by_name("Dirt")
-	if Global.is_near:
-		if !($"../Sajanie".get_cell(map_position.x, map_position.y) == tileid or $"../Sajanie".get_cell(map_position.x, map_position.y) == $"../Sajanie".tile_set.find_tile_by_name("wetDirt")):
-			$"../Sajanie".set_cell(map_position.x, map_position.y, tileid)
-			$"../Alert".set_cell(map_position.x, map_position.y, 0)
-		elif $"../Rost".get_cell(map_position.x, map_position.y) == -1:
-			$"../Sajanie".set_cell(map_position.x, map_position.y, -1)
-			$"../Alert".set_cell(map_position.x, map_position.y, -1)
+	if Global.is_near and m_in_zabor:
+			if !($"../Sajanie".get_cell(map_position.x, map_position.y) == tileid or $"../Sajanie".get_cell(map_position.x, map_position.y) == $"../Sajanie".tile_set.find_tile_by_name("wetDirt")):
+				$"../Sajanie".set_cell(map_position.x, map_position.y, tileid)
+				$"../Alert".set_cell(map_position.x, map_position.y, 0)
+			elif $"../Rost".get_cell(map_position.x, map_position.y) == -1:
+				$"../Sajanie".set_cell(map_position.x, map_position.y, -1)
+				$"../Alert".set_cell(map_position.x, map_position.y, -1)
 		
 func _on_Shop_selec():
 	if Global.is_near:
@@ -228,7 +229,6 @@ func grow(plant_pos, plant_type, coef):
 		yield(get_tree().create_timer(20/coef), "timeout")
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 1)
 
-
 func _on_music_slider_value_changed(value):
 	Global.music_volume = value
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), value)
@@ -236,15 +236,18 @@ func _on_music_slider_value_changed(value):
 
 
 func _on_Port_body_entered(body):
-	$CanvasLayer/portShop.set_visible(true)
-	pass # Replace with function body.
-
-
+	if body.name == "player":
+		$CanvasLayer/portShop.set_visible(true)
 func _on_Port_body_exited(body):
-	$CanvasLayer/portShop.set_visible(false)
-	pass # Replace with function body.
+	if body.name == "player":
+		$CanvasLayer/portShop.set_visible(false)
 
 func _on_go_menu_pressed():
 	$sfx.stream = preload("res://resources/mp3/sfx/go_settings.wav")
 	$sfx.play()
 	get_tree().change_scene("res://scenes/main_menu.tscn")
+
+func _on_Zabor_mouse_entered():
+	m_in_zabor = true
+func _on_Zabor_mouse_exited():
+	m_in_zabor = false
