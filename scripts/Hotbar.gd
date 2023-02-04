@@ -18,7 +18,6 @@ func _ready():
 func slot_gui_input(event: InputEvent, slot: SlotClass):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT && event.pressed:
-			slot.Selected()
 			if holding_item == null:
 				holding_item = slot.item.duplicate()
 				add_child(holding_item)
@@ -31,7 +30,10 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 				temp_item.global_position = event.global_position
 				holding_item = temp_item
 				holding_item.global_position = get_global_mouse_position()
-
+			slot.Selected()
+			slot.PlayerItem($"../../AnimatedSprite/PlayerItem")
+			
+			
 func _input(event):
 	if holding_item:
 		holding_item.global_position = get_global_mouse_position()
@@ -68,6 +70,7 @@ func _on_Delete_pressed():
 	sfx.play()
 	remove_child(holding_item)
 	holding_item = null
+	$"../../AnimatedSprite/PlayerItem".set_visible(false)
 	$Items/Select.set_visible(false)
 	emit_signal("del")
 	pass # Replace with function body.
