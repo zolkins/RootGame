@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://resources/img/roots/potato_full.png" type="Texture" id=1]
 [ext_resource path="res://resources/img/Puase_back.png" type="Texture" id=2]
 [ext_resource path="res://resources/img/roots/carrot_full.png" type="Texture" id=3]
 [ext_resource path="res://resources/img/roots/burak_full.png" type="Texture" id=4]
 [ext_resource path="res://resources/Hercules.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://resources/img/sellButton.png" type="Texture" id=6]
+[ext_resource path="res://resources/img/sellButton2.png" type="Texture" id=7]
+[ext_resource path="res://scripts/portShop.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -12,8 +15,9 @@ font_data = ExtResource( 5 )
 
 [node name="portShop" type="Node2D"]
 scale = Vector2( 2.21754, 2.51084 )
+script = ExtResource( 8 )
 
-[node name="PuaseBack" type="Sprite" parent="."]
+[node name="Background" type="Sprite" parent="."]
 position = Vector2( 54.1141, 33.8533 )
 rotation = -3.14159
 scale = Vector2( 1.00826, -0.555109 )
@@ -31,7 +35,7 @@ margin_right = 243.586
 margin_bottom = 81.1776
 rect_scale = Vector2( 0.2, 0.2 )
 custom_fonts/font = SubResource( 1 )
-text = "1234/$1234"
+text = "1/$10"
 align = 1
 
 [node name="PotatoPrice" type="Label" parent="."]
@@ -50,6 +54,7 @@ margin_top = 17.0
 margin_right = 229.0
 margin_bottom = 33.0
 rect_scale = Vector2( 0.2, 0.2 )
+value = 1.0
 
 [node name="Carrot" type="Sprite" parent="."]
 position = Vector2( 32.9194, 34.2515 )
@@ -63,7 +68,7 @@ margin_right = 251.684
 margin_bottom = 100.295
 rect_scale = Vector2( 0.2, 0.2 )
 custom_fonts/font = SubResource( 1 )
-text = "134/$1234"
+text = "1/$20"
 align = 1
 
 [node name="CarrotPrice" type="Label" parent="."]
@@ -82,6 +87,7 @@ margin_top = 36.0
 margin_right = 236.0
 margin_bottom = 52.0
 rect_scale = Vector2( 0.2, 0.2 )
+value = 1.0
 
 [node name="Burak" type="Sprite" parent="."]
 position = Vector2( 32.4685, 54.9618 )
@@ -95,7 +101,7 @@ margin_right = 246.0
 margin_bottom = 121.0
 rect_scale = Vector2( 0.2, 0.2 )
 custom_fonts/font = SubResource( 1 )
-text = "134/$1234"
+text = "1/$50"
 align = 1
 
 [node name="BurakPrice" type="Label" parent="."]
@@ -114,9 +120,41 @@ margin_top = 57.0
 margin_right = 240.0
 margin_bottom = 73.0
 rect_scale = Vector2( 0.2, 0.2 )
+value = 1.0
 
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 80.7203
-margin_top = -1.59309
-margin_right = 120.72
-margin_bottom = 38.4069
+[node name="PotatoButton" type="TextureButton" parent="."]
+margin_left = 85.2296
+margin_top = 5.17755
+margin_right = 142.23
+margin_bottom = 55.1776
+rect_scale = Vector2( 0.3, 0.3 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+expand = true
+
+[node name="CarrotButton" type="TextureButton" parent="."]
+margin_left = 84.7786
+margin_top = 26.286
+margin_right = 141.779
+margin_bottom = 76.286
+rect_scale = Vector2( 0.3, 0.3 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+expand = true
+
+[node name="BurakButton" type="TextureButton" parent="."]
+margin_left = 84.7786
+margin_top = 46.9962
+margin_right = 141.779
+margin_bottom = 96.9962
+rect_scale = Vector2( 0.3, 0.3 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+expand = true
+
+[connection signal="value_changed" from="PotatoSlider" to="." method="_on_PotatoSlider_value_changed"]
+[connection signal="value_changed" from="CarrotSlider" to="." method="_on_CarrotSlider_value_changed"]
+[connection signal="value_changed" from="BurakSlider" to="." method="_on_BurakSlider_value_changed"]
+[connection signal="pressed" from="PotatoButton" to="." method="_on_PotatoButton_pressed"]
+[connection signal="pressed" from="CarrotButton" to="." method="_on_CarrotButton_pressed"]
+[connection signal="pressed" from="BurakButton" to="." method="_on_BurakButton_pressed"]

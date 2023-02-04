@@ -233,3 +233,13 @@ func _on_music_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), value)
 	$CanvasLayer/Pause_menu/music_label.text = (str(Global.music_volume) + "%")
 
+
+
+func _on_Port_body_entered(body):
+	$CanvasLayer/portShop.set_visible(true)
+	pass # Replace with function body.
+
+
+func _on_Port_body_exited(body):
+	$CanvasLayer/portShop.set_visible(false)
+	pass # Replace with function body.
