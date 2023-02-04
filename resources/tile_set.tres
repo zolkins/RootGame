@@ -1,6 +1,36 @@
-[gd_resource type="TileSet" load_steps=2 format=2]
+[gd_resource type="TileSet" load_steps=12 format=2]
 
 [ext_resource path="res://resources/img/RPG Nature Tileset.png" type="Texture" id=1]
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( 13.1984, 2.7008, 7.88481, 7.3664, 3.4784, 16.3088, 1.92321, 25.7696, 0.2384, 31.472, 31.0832, 32, 30.824, 26.8064, 27.0656, 21.104, 26.936, 18.6416, 27.9728, 18.3824, 27.7136, 16.568, 26.6768, 16.1792, 25.64, 10.9952, 23.1776, 7.496, 19.4192, 2.7008 )
+
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( 0.89761, 0.627201, 0, 8.9216, 5.04481, 15.7904, 2.32322, 24.4736, 0.768009, 31.472, 31.6128, 32, 31.0944, 26.4176, 26.2992, 18.3824, 31.6128, 12.032, 31.872, 2.8304, 31.6128, 0.368 )
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 24.4736, 28.5348, 7.62561, 28.5348, 9.0512, 17.7456, 24.4736, 17.2596 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 26.6992, 27.7248, 4.79681, 27.8544, 5.05602, 18.0048, 26.1808, 17.7456 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 30.9984, 25.7696, 1.44963, 25.7696, 1.44963, 10.4768, 30.9984, 10.4768 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0.108807, 31.2128, 9.56961, 4.6448, 15.0128, 1.016, 20.3264, 3.0896, 24.8624, 10.088, 27.9728, 21.752, 30.824, 29.528, 31.3424, 31.6016 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 30.4464, 0, 31.3536, 2.1824, 30.9648, 14.1056, 27.4656, 19.808, 32, 32, 1.54561, 31.472, 4.78561, 14.7536, 0.120014, 11.6432, 1.80481, 0.627203 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 6.7184, 16.4496, 1.2752, 0, 32, 0, 31.2128, 13.3392, 26.1584, 16.968, 8.2736, 16.5792 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 7.2368, 16.1904, 5.2928, 15.672, 0, 9.06241, 1.016, 1.28641 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 6.09282, 17.0976, 12.5728, 11.0064, 22.2928, 10.0992, 25.792, 13.728, 25.792, 17.2272 )
 
 [resource]
 4/name = "grass.png 4"
@@ -49,7 +79,7 @@
 8/autotile/icon_coordinate = Vector2( 2, 1 )
 8/autotile/tile_size = Vector2( 32, 32 )
 8/autotile/spacing = 0
-8/autotile/occluder_map = [  ]
+8/autotile/occluder_map = [ Vector2( 0, 0 ), SubResource( 4 ), Vector2( 1, 0 ), SubResource( 5 ) ]
 8/autotile/navpoly_map = [  ]
 8/autotile/priority_map = [  ]
 8/autotile/z_index_map = [  ]
@@ -57,9 +87,58 @@
 8/navigation_offset = Vector2( 0, 0 )
 8/shape_offset = Vector2( 0, 0 )
 8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape = SubResource( 1 )
 8/shape_one_way = false
-8/shape_one_way_margin = 0.0
-8/shapes = [  ]
+8/shape_one_way_margin = 1.0
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 4, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 8/z_index = 0
 9/name = "DIRT"
 9/texture = ExtResource( 1 )
