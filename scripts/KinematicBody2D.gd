@@ -71,10 +71,6 @@ func _on_CanvasLayer2_not_move():
 	$AnimatedSprite.play("idle")
 
 
-func _on_go_to_settings_pressed():
-	Global.coins -= 15
-
-
 func _on_Shop_dig():
 	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
 	var tileid = $"../Sajanie".tile_set.find_tile_by_name("Dirt")
@@ -188,6 +184,9 @@ func _on_DirtShop_BurakPlant():
 		Global.coins -= Global.burak_price
 		$"../../Select".set_visible(false)
 		grow(map_pos, plant_type)
+		
+func _on_go_to_settings_toggled(toggle):
+	$CanvasLayer/Pause_menu.set_visible(toggle)
 
 func grow(plant_pos, plant_type):
 	if plant_type == "potato":
@@ -205,9 +204,9 @@ func grow(plant_pos, plant_type):
 		yield(get_tree().create_timer(10), "timeout")
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 3)
 	if plant_type == "burak":
-		yield(get_tree().create_timer(10), "timeout")
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 5)
 		yield(get_tree().create_timer(10), "timeout")
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 0)
+		yield(get_tree().create_timer(10), "timeout")
 		yield(get_tree().create_timer(10), "timeout")
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 1)
