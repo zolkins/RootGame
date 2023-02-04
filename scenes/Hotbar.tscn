@@ -190,8 +190,8 @@ texture = ExtResource( 14 )
 [node name="Slider" type="TextureButton" parent="."]
 margin_left = -3.0
 margin_top = 300.0
-margin_right = 17.0
-margin_bottom = 339.0
+margin_right = 37.0
+margin_bottom = 378.0
 texture_normal = ExtResource( 3 )
 expand = true
 

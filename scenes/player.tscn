@@ -130,8 +130,8 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=27]
-radius = 40.0
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 40, 40 )
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.0
