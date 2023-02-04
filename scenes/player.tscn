@@ -225,6 +225,7 @@ shape = SubResource( 1 )
 [node name="Coins" parent="CanvasLayer" instance=ExtResource( 2 )]
 
 [node name="Pause_menu" type="Control" parent="CanvasLayer"]
+visible = false
 margin_left = 456.0
 margin_top = 88.0
 margin_right = 500.0

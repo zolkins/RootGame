@@ -11,6 +11,7 @@ var plant_map = {}
 var rand_m:int
 
 func _ready():
+	$CanvasLayer/Pause_menu/music_slider.value = Global.music_volume
 	$CanvasLayer/Pause_menu/music_label.text = (str(Global.music_volume) + "%")
 
 # Ходьба
