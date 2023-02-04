@@ -71,10 +71,6 @@ func _on_CanvasLayer2_not_move():
 	$AnimatedSprite.play("idle")
 
 
-func _on_go_to_settings_pressed():
-	Global.coins -= 15
-
-
 func _on_Shop_dig():
 	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
 	var tileid = $"../Sajanie".tile_set.find_tile_by_name("Dirt")
@@ -163,3 +159,7 @@ func _on_DirtShop_BurakPlant():
 		var rostok = 4
 		$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
 		Global.coins -= Global.burak_price
+		
+func _on_go_to_settings_toggled(toggle):
+	$CanvasLayer/Pause_menu.set_visible(toggle)
+
