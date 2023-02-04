@@ -1,0 +1,122 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://resources/img/roots/potato_full.png" type="Texture" id=1]
+[ext_resource path="res://resources/img/Puase_back.png" type="Texture" id=2]
+[ext_resource path="res://resources/img/roots/carrot_full.png" type="Texture" id=3]
+[ext_resource path="res://resources/img/roots/burak_full.png" type="Texture" id=4]
+[ext_resource path="res://resources/Hercules.otf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 5 )
+
+[node name="portShop" type="Node2D"]
+scale = Vector2( 2.21754, 2.51084 )
+
+[node name="PuaseBack" type="Sprite" parent="."]
+position = Vector2( 54.1141, 33.8533 )
+rotation = -3.14159
+scale = Vector2( 1.00826, -0.555109 )
+texture = ExtResource( 2 )
+
+[node name="Potato" type="Sprite" parent="."]
+position = Vector2( 32.9194, 15.5327 )
+scale = Vector2( 0.74634, 0.74634 )
+texture = ExtResource( 1 )
+
+[node name="PotatoCounter" type="Label" parent="."]
+margin_left = 40.5856
+margin_top = 5.17756
+margin_right = 243.586
+margin_bottom = 81.1776
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 1 )
+text = "1234/$1234"
+align = 1
+
+[node name="PotatoPrice" type="Label" parent="."]
+margin_left = -8.11712
+margin_top = 9.16029
+margin_right = 209.883
+margin_bottom = 88.1603
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 1 )
+text = "$1234"
+align = 1
+
+[node name="PotatoSlider" type="HSlider" parent="."]
+margin_left = 42.0
+margin_top = 17.0
+margin_right = 229.0
+margin_bottom = 33.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="Carrot" type="Sprite" parent="."]
+position = Vector2( 32.9194, 34.2515 )
+scale = Vector2( 0.689971, 0.689971 )
+texture = ExtResource( 3 )
+
+[node name="CarrotCounter" type="Label" parent="."]
+margin_left = 39.6837
+margin_top = 24.2947
+margin_right = 251.684
+margin_bottom = 100.295
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 1 )
+text = "134/$1234"
+align = 1
+
+[node name="CarrotPrice" type="Label" parent="."]
+margin_left = -1.8038
+margin_top = 28.2774
+margin_right = 151.196
+margin_bottom = 104.277
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 1 )
+text = "$1234"
+align = 1
+
+[node name="CarrotSlider" type="HSlider" parent="."]
+margin_left = 42.0
+margin_top = 36.0
+margin_right = 236.0
+margin_bottom = 52.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="Burak" type="Sprite" parent="."]
+position = Vector2( 32.4685, 54.9618 )
+scale = Vector2( 0.772403, 0.736893 )
+texture = ExtResource( 4 )
+
+[node name="BurakCounter" type="Label" parent="."]
+margin_left = 41.0
+margin_top = 45.0
+margin_right = 246.0
+margin_bottom = 121.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 1 )
+text = "134/$1234"
+align = 1
+
+[node name="BurakPrice" type="Label" parent="."]
+margin_left = -2.25476
+margin_top = 48.1911
+margin_right = 150.745
+margin_bottom = 124.191
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 1 )
+text = "$1234"
+align = 1
+
+[node name="BurakSlider" type="HSlider" parent="."]
+margin_left = 42.0
+margin_top = 57.0
+margin_right = 240.0
+margin_bottom = 73.0
+rect_scale = Vector2( 0.2, 0.2 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 80.7203
+margin_top = -1.59309
+margin_right = 120.72
+margin_bottom = 38.4069
