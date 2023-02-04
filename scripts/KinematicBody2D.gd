@@ -10,6 +10,9 @@ var plant_map = {}
 
 var rand_m:int
 
+func _ready():
+	$CanvasLayer/Pause_menu/music_label.text = (str(Global.music_volume) + "%")
+
 # Ходьба
 func move():
 	velocity = Vector2()
@@ -176,6 +179,8 @@ func _on_DirtShop_BurakPlant():
 		grow(map_pos, plant_type)
 		
 func _on_go_to_settings_toggled(toggle):
+	$sfx.stream = preload("res://resources/mp3/sfx/any_in_settings.mp3")
+	$sfx.play()
 	$CanvasLayer/Pause_menu.set_visible(toggle)
 
 func grow(plant_pos, plant_type):
@@ -200,3 +205,10 @@ func grow(plant_pos, plant_type):
 		yield(get_tree().create_timer(10), "timeout")
 		yield(get_tree().create_timer(10), "timeout")
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 1)
+
+
+func _on_music_slider_value_changed(value):
+	Global.music_volume = value
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), value)
+	$CanvasLayer/Pause_menu/music_label.text = (str(Global.music_volume) + "%")
+
