@@ -69,35 +69,33 @@ func _on_go_to_settings_pressed():
 
 
 func _on_Shop_dig():
-	var map_position = $"../predmeti".world_to_map(get_global_mouse_position())
-	var tileid = $"../predmeti".tile_set.find_tile_by_name("Dirt")
+	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
+	var tileid = $"../Sajanie".tile_set.find_tile_by_name("Dirt")
 	if Global.is_near:
-		if !($"../predmeti".get_cell(map_position.x, map_position.y) == tileid):
-			$"../predmeti".set_cell(map_position.x, map_position.y, tileid)
+		if !($"../Sajanie".get_cell(map_position.x, map_position.y) == tileid):
+			$"../Sajanie".set_cell(map_position.x, map_position.y, tileid)
 		else:
-			$"../predmeti".set_cell(map_position.x, map_position.y, -1)
+			$"../Sajanie".set_cell(map_position.x, map_position.y, -1)
 		
 func _on_Shop_selec():
 	if Global.is_near:
-		$"../Select".set_visible(true)
-		var map_position = $"../Select".world_to_map(get_global_mouse_position())
-		var tileid = $"../Select".tile_set.find_tile_by_name("1")
-		$"../Select".clear()
-		$"../Select".set_cell(map_position.x, map_position.y, tileid)
+		$"../../Select".set_visible(true)
+		var map_position = $"../../Select".world_to_map(get_global_mouse_position())
+		var tileid = $"../../Select".tile_set.find_tile_by_name("1")
+		$"../../Select".clear()
+		$"../../Select".set_cell(map_position.x, map_position.y, tileid)
 	
 func _on_Shop_del():
-	$"../Select".set_visible(false)
+	$"../../Select".set_visible(false)
 
 func _on_Shop_touch():
-	var map_position = $"../predmeti".world_to_map(get_global_mouse_position())
-	var tileid = $"../predmeti".tile_set.find_tile_by_name("Dirt")
-	print("aaa")
-	if $"../predmeti".get_cell(map_position.x, map_position.y) == tileid:
+	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
+	var tileid = $"../Sajanie".tile_set.find_tile_by_name("Dirt")
+	if $"../Sajanie".get_cell(map_position.x, map_position.y) == tileid:
 			$CanvasLayer/DirtShop.set_position(get_global_mouse_position())
 
 func _on_Area2D_mouse_entered():
 	Global.is_near = true
-
 
 func _on_Area2D_mouse_exited():
 	Global.is_near = false
