@@ -137,8 +137,8 @@ extents = Vector2( 40, 40 )
 load_path = "res://.import/shovel1.png-b175d94594c0312885e04389b67fc3e5.stex"
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 8.0
-height = 6.0
+radius = 6.0
+height = 8.0
 
 [node name="player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -222,3 +222,4 @@ one_shot = true
 [connection signal="pressed" from="CanvasLayer/go_to_settings" to="." method="_on_go_to_settings_pressed"]
 [connection signal="not_move" from="CanvasLayer2" to="." method="_on_CanvasLayer2_not_move"]
 [connection signal="use_move_vector" from="CanvasLayer2" to="." method="_on_CanvasLayer2_use_move_vector"]
+[connection signal="finished" from="Music" to="." method="_on_Music_finished"]
