@@ -233,3 +233,9 @@ func _on_music_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), value)
 	$CanvasLayer/Pause_menu/music_label.text = (str(Global.music_volume) + "%")
 
+
+
+func _on_go_menu_pressed():
+	$sfx.stream = preload("res://resources/mp3/sfx/go_settings.wav")
+	$sfx.play()
+	get_tree().change_scene("res://scenes/main_menu.tscn")
