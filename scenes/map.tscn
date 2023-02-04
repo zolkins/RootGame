@@ -353,6 +353,9 @@ points = PoolVector2Array( 5.12992, 0.9375, 12.0674, 1.0625, 14.0049, 3.1875, 13
 0/shapes = [  ]
 0/z_index = 0
 
+[sub_resource type="CircleShape2D" id=23]
+radius = 625.326
+
 [sub_resource type="TileSet" id=2]
 0/name = "1"
 0/texture = ExtResource( 7 )
@@ -433,10 +436,20 @@ cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
 format = 1
 tile_data = PoolIntArray( 327686, 0, 0 )
 
+[node name="Zabor" type="Area2D" parent="YSort"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="YSort/Zabor"]
+polygon = PoolVector2Array( 492, 986, 602, 986, 606, 1109, 1277, 1117, 1270, 574, 484, 578 )
+
 [node name="Well" type="Sprite" parent="."]
-position = Vector2( 998, 771 )
+position = Vector2( 1009, 1165 )
 scale = Vector2( 0.0719803, 0.0719803 )
 texture = ExtResource( 6 )
+
+[node name="Well" type="Area2D" parent="Well"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Well/Well"]
+shape = SubResource( 23 )
 
 [node name="Select" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -450,6 +463,9 @@ position = Vector2( -199, 162 )
 
 [connection signal="body_entered" from="YSort/Lodka/Port" to="YSort/player" method="_on_Port_body_entered"]
 [connection signal="body_exited" from="YSort/Lodka/Port" to="YSort/player" method="_on_Port_body_exited"]
+[connection signal="mouse_entered" from="YSort/Zabor" to="YSort/player" method="_on_Zabor_mouse_entered"]
+[connection signal="mouse_exited" from="YSort/Zabor" to="YSort/player" method="_on_Zabor_mouse_exited"]
+[connection signal="body_entered" from="Well/Well" to="YSort/player" method="_on_Well_body_entered"]
 [connection signal="BurakPlant" from="DirtShop" to="YSort/player" method="_on_DirtShop_BurakPlant"]
 [connection signal="CarrotPlant" from="DirtShop" to="YSort/player" method="_on_DirtShop_CarrotPlant"]
 [connection signal="PotatoPlant" from="DirtShop" to="YSort/player" method="_on_DirtShop_PotatoPlant"]
