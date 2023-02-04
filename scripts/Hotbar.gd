@@ -44,7 +44,7 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT && event.pressed:
 			if holding_item:
-				if holding_item.name == "Shovel1x1":
+				if holding_item.name == "Shovel1x1" and Global.usable["Shovel1x1"] > 0:
 					emit_signal("dig")
 				elif holding_item.name == "Can1x1" and Global.usable["Can1x1"] > 0:
 					emit_signal("water")
@@ -52,6 +52,8 @@ func _input(event):
 				emit_signal("touch")
 
 func _process(delta):
+	$Items/ShovelDur.text = str(Global.usable["Shovel1x1"])
+	$Items/CanDur.text = str(Global.usable["Can1x1"])
 	if $Items/Select.is_visible():
 		if 	i == 0:
 			yield(get_tree().create_timer(0.5), "timeout")

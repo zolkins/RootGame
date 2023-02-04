@@ -84,6 +84,7 @@ func _on_Shop_dig():
 			if !($"../Sajanie".get_cell(map_position.x, map_position.y) == tileid or $"../Sajanie".get_cell(map_position.x, map_position.y) == $"../Sajanie".tile_set.find_tile_by_name("wetDirt")):
 				$"../Sajanie".set_cell(map_position.x, map_position.y, tileid)
 				$"../Alert".set_cell(map_position.x, map_position.y, 0)
+				Global.usable["Shovel1x1"] -= 1
 			elif $"../Rost".get_cell(map_position.x, map_position.y) == -1:
 				$"../Sajanie".set_cell(map_position.x, map_position.y, -1)
 				$"../Alert".set_cell(map_position.x, map_position.y, -1)
@@ -129,7 +130,7 @@ func _on_Shop_water():
 		if $"../Sajanie".get_cell(map_position.x, map_position.y) == tileid:
 			Global.usable["Can1x1"] -= 1
 			$"../Sajanie".set_cell(map_position.x, map_position.y, $"../Sajanie".tile_set.find_tile_by_name("wetDirt"))
-			yield(get_tree().create_timer(300), "timeout")
+			yield(get_tree().create_timer(60), "timeout")
 			if $"../Sajanie".get_cell(map_position.x, map_position.y) == $"../Sajanie".tile_set.find_tile_by_name("wetDirt"):
 				$"../Sajanie".set_cell(map_position.x, map_position.y, tileid)
 	
@@ -170,7 +171,7 @@ func _on_DirtShop_PotatoPlant():
 		var plant_type = "potato"
 		var rostok = 4
 		$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
-		Global.coins -= Global.potato_price
+		Global.coins -= Global.potato_seeds_price
 		$"../../Select".set_visible(false)
 		if $"../Sajanie".get_cell(map_pos.x, map_pos.y) == $"../Sajanie".tile_set.find_tile_by_name("Dirt"):
 			grow(map_pos, plant_type, 1)
@@ -184,7 +185,7 @@ func _on_DirtShop_CarrotPlant():
 		var plant_type = "carrot"
 		var rostok = 4
 		$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
-		Global.coins -= Global.carrot_price
+		Global.coins -= Global.carrot_seeds_price
 		$"../../Select".set_visible(false)
 		if $"../Sajanie".get_cell(map_pos.x, map_pos.y) == $"../Sajanie".tile_set.find_tile_by_name("Dirt"):
 			grow(map_pos, plant_type, 1)
@@ -198,7 +199,7 @@ func _on_DirtShop_BurakPlant():
 		var plant_type = "burak"
 		var rostok = 4
 		$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
-		Global.coins -= Global.burak_price
+		Global.coins -= Global.burak_seeds_price
 		$"../../Select".set_visible(false)
 		if $"../Sajanie".get_cell(map_pos.x, map_pos.y) == $"../Sajanie".tile_set.find_tile_by_name("Dirt"):
 			grow(map_pos, plant_type, 1)
@@ -255,3 +256,7 @@ func _on_Zabor_mouse_entered():
 	m_in_zabor = true
 func _on_Zabor_mouse_exited():
 	m_in_zabor = false
+
+
+func _on_Well_body_entered(_body):
+	Global.usable["Can1x1"] = 10
