@@ -127,6 +127,7 @@ func _on_Shop_water():
 	var tileid = $"../Sajanie".tile_set.find_tile_by_name("Dirt")
 	if Global.is_near:
 		if $"../Sajanie".get_cell(map_position.x, map_position.y) == tileid:
+			Global.usable["Can1x1"] -= 1
 			$"../Sajanie".set_cell(map_position.x, map_position.y, $"../Sajanie".tile_set.find_tile_by_name("wetDirt"))
 			yield(get_tree().create_timer(300), "timeout")
 			if $"../Sajanie".get_cell(map_position.x, map_position.y) == $"../Sajanie".tile_set.find_tile_by_name("wetDirt"):

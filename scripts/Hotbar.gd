@@ -20,20 +20,21 @@ func _ready():
 func slot_gui_input(event: InputEvent, slot: SlotClass):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT && event.pressed:
-			if holding_item == null:
-				holding_item = slot.item.duplicate()
-				add_child(holding_item)
-				holding_item.global_position = event.global_position
-				holding_item.global_position = get_global_mouse_position()
-			else: 
-				remove_child(holding_item)
-				var temp_item = slot.item.duplicate()
-				add_child(temp_item)
-				temp_item.global_position = event.global_position
-				holding_item = temp_item
-				holding_item.global_position = get_global_mouse_position()
-			slot.Selected()
-			slot.PlayerItem($"../../AnimatedSprite/PlayerItem")
+			if Global.usable[slot.item.name] > 0:
+				if holding_item == null:
+					holding_item = slot.item.duplicate()
+					add_child(holding_item)
+					holding_item.global_position = event.global_position
+					holding_item.global_position = get_global_mouse_position()
+				else: 
+					remove_child(holding_item)
+					var temp_item = slot.item.duplicate()
+					add_child(temp_item)
+					temp_item.global_position = event.global_position
+					holding_item = temp_item
+					holding_item.global_position = get_global_mouse_position()
+				slot.Selected()
+				slot.PlayerItem($"../../AnimatedSprite/PlayerItem")
 			
 			
 func _input(event):
@@ -45,7 +46,7 @@ func _input(event):
 			if holding_item:
 				if holding_item.name == "Shovel1x1":
 					emit_signal("dig")
-				elif holding_item.name == "Can1x1":
+				elif holding_item.name == "Can1x1" and Global.usable["Can1x1"] > 0:
 					emit_signal("water")
 			elif holding_item == null:
 				emit_signal("touch")
