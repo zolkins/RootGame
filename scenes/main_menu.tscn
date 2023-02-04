@@ -205,7 +205,9 @@ margin_left = 862.0
 margin_top = 80.0
 margin_right = 974.0
 margin_bottom = 178.0
+focus_mode = 0
 theme = ExtResource( 5 )
+enabled_focus_mode = 0
 align = 1
 
 [node name="language2" type="Label" parent="settings"]
@@ -235,8 +237,10 @@ margin_left = 886.0
 margin_top = 246.0
 margin_right = 967.0
 margin_bottom = 266.0
+focus_mode = 0
 theme = ExtResource( 5 )
 custom_fonts/font = SubResource( 4 )
+enabled_focus_mode = 0
 text = "Ukranian"
 align = 1
 icon_align = 1
@@ -311,7 +315,9 @@ margin_left = 862.0
 margin_top = 463.0
 margin_right = 974.0
 margin_bottom = 561.0
+focus_mode = 0
 theme = ExtResource( 5 )
+enabled_focus_mode = 0
 
 [node name="buttons" type="AudioStreamPlayer" parent="."]
 bus = "SFX"
