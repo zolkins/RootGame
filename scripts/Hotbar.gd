@@ -10,6 +10,7 @@ signal dig
 signal del
 signal selec
 signal touch
+signal water
 
 func _ready():
 	$Items.set_visible(false)
@@ -45,7 +46,7 @@ func _input(event):
 				if holding_item.name == "Shovel1x1":
 					emit_signal("dig")
 				elif holding_item.name == "Can1x1":
-					pass
+					emit_signal("water")
 			elif holding_item == null:
 				emit_signal("touch")
 

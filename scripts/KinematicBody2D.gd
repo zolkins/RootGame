@@ -5,6 +5,8 @@ export (int) var speed = 200
 var velocity = Vector2()
 onready var fss = $Foot_step
 var map_pos = null
+var plant_type = {}
+
 
 var rand_m:int
 
@@ -43,6 +45,8 @@ func _process(_delta):
 	else:
 		$CanvasLayer2.hide()
 		move()
+	if velocity:
+		$"../../DirtShop".set_visible(false)
 
 func _on_CanvasLayer2_use_move_vector(move_vector):
 	velocity = move_vector.normalized()*speed
@@ -75,7 +79,7 @@ func _on_Shop_dig():
 	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
 	var tileid = $"../Sajanie".tile_set.find_tile_by_name("Dirt")
 	if Global.is_near:
-		if !($"../Sajanie".get_cell(map_position.x, map_position.y) == tileid):
+		if !($"../Sajanie".get_cell(map_position.x, map_position.y) == tileid or $"../Sajanie".get_cell(map_position.x, map_position.y) == $"../Sajanie".tile_set.find_tile_by_name("wetDirt")):
 			$"../Sajanie".set_cell(map_position.x, map_position.y, tileid)
 		elif $"../Rost".get_cell(map_position.x, map_position.y) == -1:
 			$"../Sajanie".set_cell(map_position.x, map_position.y, -1)
@@ -92,12 +96,21 @@ func _on_Shop_del():
 	$"../../Select".set_visible(false)
 
 func _on_Shop_touch():
-	var map_position = $"../Rost".world_to_map(get_global_mouse_position())
+	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
 	var tileid = $"../Sajanie".tile_set.find_tile_by_name("Dirt")
-	if $"../Sajanie".get_cell(map_position.x, map_position.y) == tileid:
+	if $"../Sajanie".get_cell(map_position.x, map_position.y) == tileid or $"../Sajanie".get_cell(map_position.x, map_position.y) == $"../Sajanie".tile_set.find_tile_by_name("wetDirt") and !$"../../DirtShop".is_visible() and $"../Rost".get_cell(map_position.x, map_position.y) == -1:
+		map_pos = map_position
 		$"../../DirtShop".set_visible(!$"../../DirtShop".is_visible())
 		$"../../DirtShop".set_position(get_global_mouse_position())
-		map_pos = map_position
+		
+func _on_Shop_water():
+	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
+	var tileid = $"../Sajanie".tile_set.find_tile_by_name("Dirt")
+	if Global.is_near:
+		if $"../Sajanie".get_cell(map_position.x, map_position.y) == tileid:
+			$"../Sajanie".set_cell(map_position.x, map_position.y, $"../Sajanie".tile_set.find_tile_by_name("wetDirt"))
+	
+		
 
 func _on_Area2D_mouse_entered():
 	Global.is_near = true
@@ -128,14 +141,25 @@ func _on_Music_finished():
 	$Music.play()
 
 func _on_DirtShop_PotatoPlant():
-	$"../../DirtShop".set_visible(false)
-	var plant_type = "potato"
-	var rostok = 4
-	print(map_pos)
-	$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
+	if Global.coins - Global.potato_price >= 0:
+		$"../../DirtShop".set_visible(false)
+		var plant_type = "potato"
+		var rostok = 4
+		$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
+		Global.coins -= Global.potato_price
 
 func _on_DirtShop_CarrotPlant():
-	pass
+	if Global.coins - Global.carrot_price >= 0:
+		$"../../DirtShop".set_visible(false)
+		var plant_type = "carrot"
+		var rostok = 4
+		$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
+		Global.coins -= Global.carrot_price
 
 func _on_DirtShop_BurakPlant():
-	pass
+	if Global.coins - Global.burak_price >= 0:
+		$"../../DirtShop".set_visible(false)
+		var plant_type = "burako"
+		var rostok = 4
+		$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
+		Global.coins -= Global.burak_price
