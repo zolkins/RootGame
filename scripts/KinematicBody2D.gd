@@ -4,6 +4,7 @@ export (int) var speed = 200
 #onready var _animated_sprite = $animated_sprite
 var velocity = Vector2()
 onready var fss = $Foot_step
+var map_pos = null
 
 # Ходьба
 func move():
@@ -74,7 +75,7 @@ func _on_Shop_dig():
 	if Global.is_near:
 		if !($"../Sajanie".get_cell(map_position.x, map_position.y) == tileid):
 			$"../Sajanie".set_cell(map_position.x, map_position.y, tileid)
-		else:
+		elif $"../Rost".get_cell(map_position.x, map_position.y) == -1:
 			$"../Sajanie".set_cell(map_position.x, map_position.y, -1)
 		
 func _on_Shop_selec():
@@ -89,10 +90,12 @@ func _on_Shop_del():
 	$"../../Select".set_visible(false)
 
 func _on_Shop_touch():
-	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
+	var map_position = $"../Rost".world_to_map(get_global_mouse_position())
 	var tileid = $"../Sajanie".tile_set.find_tile_by_name("Dirt")
 	if $"../Sajanie".get_cell(map_position.x, map_position.y) == tileid:
-			$CanvasLayer/DirtShop.set_position(get_global_mouse_position())
+		$"../../DirtShop".set_visible(!$"../../DirtShop".is_visible())
+		$"../../DirtShop".set_position(get_global_mouse_position())
+		map_pos = map_position
 
 func _on_Area2D_mouse_entered():
 	Global.is_near = true
@@ -101,4 +104,15 @@ func _on_Area2D_mouse_exited():
 	Global.is_near = false
 
 
+func _on_DirtShop_PotatoPlant():
+	$"../../DirtShop".set_visible(false)
+	var plant_type = "potato"
+	var rostok = 4
+	print(map_pos)
+	$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
 
+func _on_DirtShop_CarrotPlant():
+	pass
+
+func _on_DirtShop_BurakPlant():
+	pass

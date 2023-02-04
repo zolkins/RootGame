@@ -218,6 +218,7 @@ one_shot = true
 [connection signal="del" from="CanvasLayer/Shop" to="." method="_on_Shop_del"]
 [connection signal="dig" from="CanvasLayer/Shop" to="." method="_on_Shop_dig"]
 [connection signal="selec" from="CanvasLayer/Shop" to="." method="_on_Shop_selec"]
+[connection signal="touch" from="CanvasLayer/Shop" to="." method="_on_Shop_touch"]
 [connection signal="pressed" from="CanvasLayer/go_to_settings" to="." method="_on_go_to_settings_pressed"]
 [connection signal="not_move" from="CanvasLayer2" to="." method="_on_CanvasLayer2_not_move"]
 [connection signal="use_move_vector" from="CanvasLayer2" to="." method="_on_CanvasLayer2_use_move_vector"]

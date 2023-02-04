@@ -46,8 +46,8 @@ func _input(event):
 					emit_signal("dig")
 				elif holding_item.name == "Can1x1":
 					pass
-				elif holding_item == null:
-					emit_signal("touch")
+			elif holding_item == null:
+				emit_signal("touch")
 
 func _process(delta):
 	if $Items/Select.is_visible():

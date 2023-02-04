@@ -1,16 +1,16 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/PlayerSlot.gd" type="Script" id=1]
 [ext_resource path="res://resources/chek_b.tres" type="Theme" id=2]
 [ext_resource path="res://scenes/PricePotato.gd" type="Script" id=3]
-[ext_resource path="res://resources/img/potato_seeds.png" type="Texture" id=4]
-[ext_resource path="res://resources/img/roots/burak_seeds.png" type="Texture" id=5]
-[ext_resource path="res://resources/img/roots/carrot_seeds.png" type="Texture" id=6]
 [ext_resource path="res://scenes/PriceCarrot.gd" type="Script" id=7]
 [ext_resource path="res://scenes/PriceBurak.gd" type="Script" id=8]
 [ext_resource path="res://resources/Hercules.otf" type="DynamicFontData" id=9]
 [ext_resource path="res://resources/Neucha-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://scenes/dirt_shop.gd" type="Script" id=11]
+[ext_resource path="res://resources/img/slotTextureCarrot.png" type="Texture" id=12]
+[ext_resource path="res://resources/img/slotTextureBurak.png" type="Texture" id=13]
+[ext_resource path="res://resources/img/slotTexturePotato.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 outline_size = 1
@@ -23,134 +23,97 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=3]
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 10 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 24
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 9 )
-
-[sub_resource type="DynamicFont" id=5]
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 10 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 24
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 9 )
-
 [node name="DirtShop" type="Node2D"]
 script = ExtResource( 11 )
 
-[node name="Slot 1" type="Panel" parent="."]
-margin_left = -90.0
-margin_top = -62.0
-margin_right = -54.0
-margin_bottom = -26.0
-rect_min_size = Vector2( 36, 36 )
-theme = ExtResource( 2 )
+[node name="Potato" type="TextureButton" parent="."]
+margin_left = -88.0
+margin_top = -60.0
+margin_right = -56.0
+margin_bottom = -28.0
+texture_normal = ExtResource( 14 )
 script = ExtResource( 1 )
 
-[node name="potato_seeds" type="Sprite" parent="Slot 1"]
-position = Vector2( 17.75, 18.25 )
-scale = Vector2( 1.525, 1.525 )
-texture = ExtResource( 4 )
-
-[node name="Label" type="Label" parent="Slot 1"]
+[node name="Label" type="Label" parent="Potato"]
 anchor_right = 50.0
-margin_left = -72.0
-margin_top = 37.0
-margin_right = -1686.0
-margin_bottom = 55.0
+margin_left = -74.0
+margin_top = 35.0
+margin_right = -1496.0
+margin_bottom = 53.0
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 1 )
 text = "potato_seeds"
 align = 1
 
-[node name="Price" type="Label" parent="Slot 1"]
-margin_left = -116.0
-margin_top = -24.0
-margin_right = 153.0
-margin_bottom = 7.0
+[node name="Price" type="Label" parent="Potato"]
+margin_left = -40.0
+margin_top = -31.0
+margin_right = 71.0
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 2 )
 text = "10"
 align = 1
 script = ExtResource( 3 )
 
-[node name="Slot 2" type="Panel" parent="."]
-margin_left = -16.0
-margin_top = -99.0
-margin_right = 20.0
-margin_bottom = -63.0
-rect_min_size = Vector2( 36, 36 )
-theme = ExtResource( 2 )
+[node name="Carrot" type="TextureButton" parent="."]
+margin_left = -14.0
+margin_top = -97.0
+margin_right = 18.0
+margin_bottom = -65.0
+texture_normal = ExtResource( 12 )
 script = ExtResource( 1 )
 
-[node name="carrot_seeds" type="Sprite" parent="Slot 2"]
-position = Vector2( 17.75, 18.25 )
-scale = Vector2( 1.525, 1.525 )
-texture = ExtResource( 6 )
-
-[node name="Label" type="Label" parent="Slot 2"]
-margin_left = -77.0
+[node name="Label" type="Label" parent="Carrot"]
+anchor_right = 50.0
+margin_left = -39.0
 margin_top = 35.0
-margin_right = 116.0
+margin_right = -1529.0
 margin_bottom = 53.0
 theme = ExtResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 text = "carrot_seeds"
 align = 1
 
-[node name="Price" type="Label" parent="Slot 2"]
-anchor_right = 0.222
-margin_left = -160.0
-margin_top = -24.0
-margin_right = 188.008
-margin_bottom = 7.0
+[node name="Price" type="Label" parent="Carrot"]
+margin_left = -53.0
+margin_top = -30.0
+margin_right = 87.0
+margin_bottom = 1.0
 theme = ExtResource( 2 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "20"
 align = 1
 script = ExtResource( 7 )
 
-[node name="Slot 3" type="Panel" parent="."]
-margin_left = 56.0
-margin_top = -62.0
-margin_right = 92.0
-margin_bottom = -26.0
-rect_min_size = Vector2( 36, 36 )
-theme = ExtResource( 2 )
+[node name="Burak" type="TextureButton" parent="."]
+margin_left = 58.0
+margin_top = -60.0
+margin_right = 90.0
+margin_bottom = -28.0
+texture_normal = ExtResource( 13 )
 script = ExtResource( 1 )
 
-[node name="burak_seeds" type="Sprite" parent="Slot 3"]
-position = Vector2( 17.75, 18.25 )
-scale = Vector2( 1.525, 1.525 )
-texture = ExtResource( 5 )
-
-[node name="Label" type="Label" parent="Slot 3"]
-margin_left = -82.0
-margin_top = 37.0
-margin_right = 116.0
-margin_bottom = 55.0
+[node name="Label" type="Label" parent="Burak"]
+anchor_right = 50.0
+margin_left = -74.0
+margin_top = 35.0
+margin_right = -1496.0
+margin_bottom = 53.0
 theme = ExtResource( 2 )
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 text = "burak_seeds"
 align = 1
 
-[node name="Price" type="Label" parent="Slot 3"]
-margin_left = -91.0
-margin_top = -24.0
-margin_right = 130.0
-margin_bottom = 7.0
+[node name="Price" type="Label" parent="Burak"]
+margin_left = -39.0
+margin_top = -31.0
+margin_right = 71.0
 theme = ExtResource( 2 )
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 2 )
 text = "100"
 align = 1
 script = ExtResource( 8 )
+
+[connection signal="pressed" from="Potato" to="." method="_on_Potato_pressed"]
+[connection signal="pressed" from="Carrot" to="." method="_on_Carrot_pressed"]
+[connection signal="pressed" from="Burak" to="." method="_on_Burak_pressed"]
