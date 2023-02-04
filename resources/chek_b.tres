@@ -18,6 +18,7 @@ CheckButton/colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
 CheckButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 4
+CheckButton/fonts/font = null
 CheckButton/icons/off = ExtResource( 2 )
 CheckButton/icons/off_disabled = null
 CheckButton/icons/on = ExtResource( 3 )
