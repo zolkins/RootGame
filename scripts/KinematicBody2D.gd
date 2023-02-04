@@ -5,7 +5,7 @@ export (int) var speed = 200
 var velocity = Vector2()
 onready var fss = $Foot_step
 var map_pos = null
-var plant_type = {}
+var plant_map = {}
 
 
 var rand_m:int
@@ -81,8 +81,10 @@ func _on_Shop_dig():
 	if Global.is_near:
 		if !($"../Sajanie".get_cell(map_position.x, map_position.y) == tileid or $"../Sajanie".get_cell(map_position.x, map_position.y) == $"../Sajanie".tile_set.find_tile_by_name("wetDirt")):
 			$"../Sajanie".set_cell(map_position.x, map_position.y, tileid)
+			$"../Alert".set_cell(map_position.x, map_position.y, 0)
 		elif $"../Rost".get_cell(map_position.x, map_position.y) == -1:
 			$"../Sajanie".set_cell(map_position.x, map_position.y, -1)
+			$"../Alert".set_cell(map_position.x, map_position.y, -1)
 		
 func _on_Shop_selec():
 	if Global.is_near:
@@ -98,10 +100,14 @@ func _on_Shop_del():
 func _on_Shop_touch():
 	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
 	var tileid = $"../Sajanie".tile_set.find_tile_by_name("Dirt")
-	if $"../Sajanie".get_cell(map_position.x, map_position.y) == tileid or $"../Sajanie".get_cell(map_position.x, map_position.y) == $"../Sajanie".tile_set.find_tile_by_name("wetDirt") and !$"../../DirtShop".is_visible() and $"../Rost".get_cell(map_position.x, map_position.y) == -1:
+	if ($"../Sajanie".get_cell(map_position.x, map_position.y) == tileid or $"../Sajanie".get_cell(map_position.x, map_position.y) == $"../Sajanie".tile_set.find_tile_by_name("wetDirt")) and !$"../../DirtShop".is_visible() and $"../Rost".get_cell(map_position.x, map_position.y) == -1:
 		map_pos = map_position
 		$"../../DirtShop".set_visible(!$"../../DirtShop".is_visible())
 		$"../../DirtShop".set_position(get_global_mouse_position())
+		$"../../Select".set_visible(true)
+		tileid = $"../../Select".tile_set.find_tile_by_name("1")
+		$"../../Select".clear()
+		$"../../Select".set_cell(map_position.x, map_position.y, tileid)
 		
 func _on_Shop_water():
 	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
@@ -142,24 +148,56 @@ func _on_Music_finished():
 
 func _on_DirtShop_PotatoPlant():
 	if Global.coins - Global.potato_price >= 0:
+		$"../Alert".set_cell(map_pos.x, map_pos.y, -1)
 		$"../../DirtShop".set_visible(false)
 		var plant_type = "potato"
 		var rostok = 4
 		$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
 		Global.coins -= Global.potato_price
+		$"../../Select".set_visible(false)
+		grow(map_pos, plant_type)
 
 func _on_DirtShop_CarrotPlant():
 	if Global.coins - Global.carrot_price >= 0:
+		$"../Alert".set_cell(map_pos.x, map_pos.y, -1)
 		$"../../DirtShop".set_visible(false)
 		var plant_type = "carrot"
 		var rostok = 4
 		$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
 		Global.coins -= Global.carrot_price
+		$"../../Select".set_visible(false)
+		grow(map_pos, plant_type)
 
 func _on_DirtShop_BurakPlant():
 	if Global.coins - Global.burak_price >= 0:
+		$"../Alert".set_cell(map_pos.x, map_pos.y, -1)
 		$"../../DirtShop".set_visible(false)
-		var plant_type = "burako"
+		var plant_type = "burak"
 		var rostok = 4
 		$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
 		Global.coins -= Global.burak_price
+		$"../../Select".set_visible(false)
+		grow(map_pos, plant_type)
+
+func grow(plant_pos, plant_type):
+	if plant_type == "potato":
+		yield(get_tree().create_timer(10), "timeout")
+		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 5)
+		yield(get_tree().create_timer(10), "timeout")
+		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 6)
+		yield(get_tree().create_timer(10), "timeout")
+		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 7)
+	if plant_type == "carrot":
+		yield(get_tree().create_timer(10), "timeout")
+		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 5)
+		yield(get_tree().create_timer(10), "timeout")
+		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 2)
+		yield(get_tree().create_timer(10), "timeout")
+		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 3)
+	if plant_type == "burak":
+		yield(get_tree().create_timer(10), "timeout")
+		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 5)
+		yield(get_tree().create_timer(10), "timeout")
+		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 0)
+		yield(get_tree().create_timer(10), "timeout")
+		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 1)
