@@ -50,6 +50,7 @@ func _process(_delta):
 		move()
 	if velocity:
 		$"../../DirtShop".set_visible(false)
+		
 
 func _on_CanvasLayer2_use_move_vector(move_vector):
 	velocity = move_vector.normalized()*speed
@@ -97,16 +98,27 @@ func _on_Shop_del():
 	$"../../Select".set_visible(false)
 
 func _on_Shop_touch():
-	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
-	var tileid = $"../Sajanie".tile_set.find_tile_by_name("Dirt")
-	if ($"../Sajanie".get_cell(map_position.x, map_position.y) == tileid or $"../Sajanie".get_cell(map_position.x, map_position.y) == $"../Sajanie".tile_set.find_tile_by_name("wetDirt")) and !$"../../DirtShop".is_visible() and $"../Rost".get_cell(map_position.x, map_position.y) == -1:
-		map_pos = map_position
-		$"../../DirtShop".set_visible(!$"../../DirtShop".is_visible())
-		$"../../DirtShop".set_position(get_global_mouse_position())
-		$"../../Select".set_visible(true)
-		tileid = $"../../Select".tile_set.find_tile_by_name("1")
-		$"../../Select".clear()
-		$"../../Select".set_cell(map_position.x, map_position.y, tileid)
+	if Global.is_near:
+		var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
+		var tileid = $"../Sajanie".tile_set.find_tile_by_name("Dirt")
+		var plant = $"../Rost".get_cell(map_position.x, map_position.y)
+		if ($"../Sajanie".get_cell(map_position.x, map_position.y) == tileid or $"../Sajanie".get_cell(map_position.x, map_position.y) == $"../Sajanie".tile_set.find_tile_by_name("wetDirt")) and !$"../../DirtShop".is_visible() and $"../Rost".get_cell(map_position.x, map_position.y) == -1:
+			map_pos = map_position
+			$"../../DirtShop".set_visible(!$"../../DirtShop".is_visible())
+			$"../../DirtShop".set_position(get_global_mouse_position())
+			$"../../Select".set_visible(true)
+			tileid = $"../../Select".tile_set.find_tile_by_name("1")
+			$"../../Select".clear()
+			$"../../Select".set_cell(map_position.x, map_position.y, tileid)
+		if(plant == 1 or plant == 3 or plant == 7):
+			if plant == 1:
+				Global.burak_counter += 1
+			elif plant == 3:
+				Global.carrot_counter += 1
+			elif plant == 7:
+				Global.potato_counter += 1
+			$"../Rost".set_cell(map_position.x, map_position.y, -1)
+			$"../Alert".set_cell(map_position.x, map_position.y, 0)
 		
 func _on_Shop_water():
 	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
@@ -154,7 +166,10 @@ func _on_DirtShop_PotatoPlant():
 		$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
 		Global.coins -= Global.potato_price
 		$"../../Select".set_visible(false)
-		grow(map_pos, plant_type)
+		if $"../Sajanie".get_cell(map_pos.x, map_pos.y) == $"../Sajanie".tile_set.find_tile_by_name("Dirt"):
+			grow(map_pos, plant_type, 1)
+		else:
+			grow(map_pos, plant_type, 1.5)
 
 func _on_DirtShop_CarrotPlant():
 	if Global.coins - Global.carrot_price >= 0:
@@ -165,7 +180,10 @@ func _on_DirtShop_CarrotPlant():
 		$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
 		Global.coins -= Global.carrot_price
 		$"../../Select".set_visible(false)
-		grow(map_pos, plant_type)
+		if $"../Sajanie".get_cell(map_pos.x, map_pos.y) == $"../Sajanie".tile_set.find_tile_by_name("Dirt"):
+			grow(map_pos, plant_type, 1)
+		else:
+			grow(map_pos, plant_type, 1.5)
 
 func _on_DirtShop_BurakPlant():
 	if Global.coins - Global.burak_price >= 0:
@@ -176,34 +194,37 @@ func _on_DirtShop_BurakPlant():
 		$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
 		Global.coins -= Global.burak_price
 		$"../../Select".set_visible(false)
-		grow(map_pos, plant_type)
+		if $"../Sajanie".get_cell(map_pos.x, map_pos.y) == $"../Sajanie".tile_set.find_tile_by_name("Dirt"):
+			grow(map_pos, plant_type, 1)
+		else:
+			grow(map_pos, plant_type, 1.5)
 		
 func _on_go_to_settings_toggled(toggle):
 	$sfx.stream = preload("res://resources/mp3/sfx/any_in_settings.mp3")
 	$sfx.play()
 	$CanvasLayer/Pause_menu.set_visible(toggle)
 
-func grow(plant_pos, plant_type):
+func grow(plant_pos, plant_type, coef):
 	if plant_type == "potato":
-		yield(get_tree().create_timer(10), "timeout")
+		yield(get_tree().create_timer(5 + randi() % 6), "timeout")
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 5)
-		yield(get_tree().create_timer(10), "timeout")
+		yield(get_tree().create_timer(10/coef), "timeout")
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 6)
-		yield(get_tree().create_timer(10), "timeout")
+		yield(get_tree().create_timer(10/coef), "timeout")
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 7)
 	if plant_type == "carrot":
-		yield(get_tree().create_timer(10), "timeout")
+		yield(get_tree().create_timer(5 + randi() % 6), "timeout")
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 5)
-		yield(get_tree().create_timer(10), "timeout")
+		yield(get_tree().create_timer(15/coef), "timeout")
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 2)
-		yield(get_tree().create_timer(10), "timeout")
+		yield(get_tree().create_timer(15/coef), "timeout")
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 3)
 	if plant_type == "burak":
+		yield(get_tree().create_timer(5 + randi() % 6), "timeout")
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 5)
-		yield(get_tree().create_timer(10), "timeout")
+		yield(get_tree().create_timer(20/coef), "timeout")
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 0)
-		yield(get_tree().create_timer(10), "timeout")
-		yield(get_tree().create_timer(10), "timeout")
+		yield(get_tree().create_timer(20/coef), "timeout")
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 1)
 
 
