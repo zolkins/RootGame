@@ -183,6 +183,7 @@ margin_bottom = 21.0
 text = "remove"
 
 [node name="Select" type="Sprite" parent="Items"]
+visible = false
 position = Vector2( 23, 228 )
 scale = Vector2( 1.75, 1.75 )
 texture = ExtResource( 14 )
