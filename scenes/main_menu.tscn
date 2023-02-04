@@ -139,7 +139,9 @@ margin_left = 771.0
 margin_top = 237.0
 margin_right = 1201.0
 margin_bottom = 272.0
+focus_mode = 0
 theme = ExtResource( 3 )
+enabled_focus_mode = 0
 text = "new_game"
 
 [node name="Continue" type="Button" parent="."]
@@ -147,7 +149,9 @@ margin_left = 771.0
 margin_top = 342.0
 margin_right = 1201.0
 margin_bottom = 377.0
+focus_mode = 0
 theme = ExtResource( 3 )
+enabled_focus_mode = 0
 text = "continue"
 
 [node name="Settings" type="Button" parent="."]
@@ -155,7 +159,9 @@ margin_left = 771.0
 margin_top = 447.0
 margin_right = 1201.0
 margin_bottom = 482.0
+focus_mode = 0
 theme = ExtResource( 3 )
+enabled_focus_mode = 0
 text = "settings"
 
 [node name="Exit" type="Button" parent="."]
@@ -163,7 +169,9 @@ margin_left = 771.0
 margin_top = 552.0
 margin_right = 1201.0
 margin_bottom = 587.0
+focus_mode = 0
 theme = ExtResource( 3 )
+enabled_focus_mode = 0
 text = "exit"
 
 [node name="camera" type="Camera2D" parent="."]
@@ -197,7 +205,9 @@ margin_left = 488.0
 margin_top = 616.0
 margin_right = 808.0
 margin_bottom = 697.28
+focus_mode = 0
 theme = ExtResource( 3 )
+enabled_focus_mode = 0
 text = "back"
 
 [node name="full_screen_b" type="CheckButton" parent="settings"]
