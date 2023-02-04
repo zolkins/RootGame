@@ -100,6 +100,7 @@ func _on_Shop_del():
 func _on_Shop_touch():
 	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
 	var tileid = $"../Sajanie".tile_set.find_tile_by_name("Dirt")
+	var plant = $"../Rost".get_cell(map_position.x, map_position.y)
 	if ($"../Sajanie".get_cell(map_position.x, map_position.y) == tileid or $"../Sajanie".get_cell(map_position.x, map_position.y) == $"../Sajanie".tile_set.find_tile_by_name("wetDirt")) and !$"../../DirtShop".is_visible() and $"../Rost".get_cell(map_position.x, map_position.y) == -1:
 		map_pos = map_position
 		$"../../DirtShop".set_visible(!$"../../DirtShop".is_visible())
@@ -108,6 +109,15 @@ func _on_Shop_touch():
 		tileid = $"../../Select".tile_set.find_tile_by_name("1")
 		$"../../Select".clear()
 		$"../../Select".set_cell(map_position.x, map_position.y, tileid)
+	if(plant == 1 or plant == 3 or plant == 7):
+		if plant == 1:
+			Global.burak_counter += 1
+		elif plant == 3:
+			Global.carrot_counter += 1
+		elif plant == 7:
+			Global.potato_counter += 1
+		$"../Rost".set_cell(map_position.x, map_position.y, -1)
+		$"../Alert".set_cell(map_position.x, map_position.y, 0)
 		
 func _on_Shop_water():
 	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())

@@ -8,6 +8,9 @@ onready var music_volume = AudioServer.set_bus_volume_db(AudioServer.get_bus_ind
 onready var potato_price = 10
 onready var carrot_price = 50
 onready var burak_price = 100
+onready var potato_counter = 0
+onready var carrot_counter = 0
+onready var burak_counter = 0
 
 
 func _ready():
