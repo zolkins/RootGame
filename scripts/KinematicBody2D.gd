@@ -11,6 +11,7 @@ var plant_map = {}
 var rand_m:int
 
 func _ready():
+	$CanvasLayer/Pause_menu/music_slider.value = Global.music_volume
 	$CanvasLayer/Pause_menu/music_label.text = (str(Global.music_volume) + "%")
 
 # Ходьба
@@ -234,7 +235,6 @@ func _on_music_slider_value_changed(value):
 	$CanvasLayer/Pause_menu/music_label.text = (str(Global.music_volume) + "%")
 
 
-
 func _on_Port_body_entered(body):
 	$CanvasLayer/portShop.set_visible(true)
 	pass # Replace with function body.
@@ -243,3 +243,8 @@ func _on_Port_body_entered(body):
 func _on_Port_body_exited(body):
 	$CanvasLayer/portShop.set_visible(false)
 	pass # Replace with function body.
+
+func _on_go_menu_pressed():
+	$sfx.stream = preload("res://resources/mp3/sfx/go_settings.wav")
+	$sfx.play()
+	get_tree().change_scene("res://scenes/main_menu.tscn")

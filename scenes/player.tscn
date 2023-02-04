@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Coins.tscn" type="PackedScene" id=2]
@@ -11,7 +11,7 @@
 [ext_resource path="res://resources/mp3/sfx/FootStep Grass 01.wav" type="AudioStream" id=9]
 [ext_resource path="res://resources/img/settings_but_small.png" type="Texture" id=10]
 [ext_resource path="res://resources/img/Puase_back.png" type="Texture" id=11]
-[ext_resource path="res://resources/button_bl.tres" type="Theme" id=12]
+[ext_resource path="res://resources/button_go_to_menu.tres" type="StyleBox" id=12]
 [ext_resource path="res://resources/Hercules.otf" type="DynamicFontData" id=13]
 [ext_resource path="res://resources/Neucha-Regular.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://scenes/portShop.tscn" type="PackedScene" id=15]
@@ -146,19 +146,42 @@ radius = 8.0
 height = 6.0
 
 [sub_resource type="DynamicFont" id=29]
-size = 45
+size = 251
 outline_size = 1
+use_filter = true
 font_data = ExtResource( 13 )
 
 [sub_resource type="DynamicFont" id=30]
-size = 60
+size = 101
 outline_size = 1
+use_filter = true
 font_data = ExtResource( 13 )
 
 [sub_resource type="DynamicFont" id=31]
-size = 34
+size = 123
 outline_size = 1
+use_filter = true
 font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=35]
+size = 63
+outline_size = 1
+use_filter = true
+font_data = ExtResource( 14 )
+
+[sub_resource type="Theme" id=34]
+Button/colors/font_color = Color( 0, 0, 0, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = SubResource( 35 )
+Button/styles/disabled = ExtResource( 12 )
+Button/styles/focus = ExtResource( 12 )
+Button/styles/hover = ExtResource( 12 )
+Button/styles/normal = ExtResource( 12 )
+Button/styles/pressed = ExtResource( 12 )
 
 [node name="player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -229,11 +252,11 @@ scale = Vector2( 0.421674, -0.544527 )
 texture = ExtResource( 11 )
 
 [node name="music_label" type="Label" parent="CanvasLayer/Pause_menu"]
-margin_left = 35.5555
-margin_top = 25.9756
-margin_right = 89.5555
-margin_bottom = 82.9756
-rect_scale = Vector2( 0.1, 0.1 )
+margin_left = 35.5554
+margin_top = 26.7511
+margin_right = 337.555
+margin_bottom = 341.751
+rect_scale = Vector2( 0.02, 0.02 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 29 )
@@ -248,11 +271,11 @@ rect_scale = Vector2( 0.2, 0.2 )
 focus_mode = 0
 
 [node name="paused" type="Label" parent="CanvasLayer/Pause_menu"]
-margin_left = 3.0
-margin_top = 2.0
-margin_right = 195.0
-margin_bottom = 68.0
-rect_scale = Vector2( 0.2, 0.2 )
+margin_left = 5.66666
+margin_top = 2.19695
+margin_right = 332.667
+margin_bottom = 210.197
+rect_scale = Vector2( 0.1, 0.1 )
 custom_colors/font_color = Color( 0.376471, 0.0784314, 0.0784314, 1 )
 custom_fonts/font = SubResource( 30 )
 text = "Paused"
@@ -260,22 +283,22 @@ align = 1
 valign = 1
 
 [node name="music" type="Label" parent="CanvasLayer/Pause_menu"]
-margin_left = 3.0
-margin_top = 25.3663
-margin_right = 69.0
-margin_bottom = 98.3663
-rect_scale = Vector2( 0.2, 0.2 )
+margin_left = 2.88885
+margin_top = 26.751
+margin_right = 243.889
+margin_bottom = 157.751
+rect_scale = Vector2( 0.05, 0.05 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 31 )
 text = "music"
 
-[node name="Button" type="Button" parent="CanvasLayer/Pause_menu"]
+[node name="go menu" type="Button" parent="CanvasLayer/Pause_menu"]
 margin_left = 8.0
 margin_top = 53.2438
 margin_right = 505.0
 margin_bottom = 208.244
 rect_scale = Vector2( 0.06, 0.06 )
-theme = ExtResource( 12 )
+theme = SubResource( 34 )
 text = "Go to Root_Menu"
 
 [node name="go_to_settings" type="TextureButton" parent="CanvasLayer"]
@@ -318,6 +341,7 @@ one_shot = true
 [connection signal="touch" from="CanvasLayer/Shop" to="." method="_on_Shop_touch"]
 [connection signal="water" from="CanvasLayer/Shop" to="." method="_on_Shop_water"]
 [connection signal="value_changed" from="CanvasLayer/Pause_menu/music_slider" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/Pause_menu/go menu" to="." method="_on_go_menu_pressed"]
 [connection signal="toggled" from="CanvasLayer/go_to_settings" to="." method="_on_go_to_settings_toggled"]
 [connection signal="not_move" from="CanvasLayer2" to="." method="_on_CanvasLayer2_not_move"]
 [connection signal="use_move_vector" from="CanvasLayer2" to="." method="_on_CanvasLayer2_use_move_vector"]
