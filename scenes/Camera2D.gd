@@ -17,4 +17,3 @@ func _input(event):
 			if event.button_index == BUTTON_WHEEL_DOWN:
 				if des_zoom < zoom_max:
 					des_zoom += zoom_speed
-	pass

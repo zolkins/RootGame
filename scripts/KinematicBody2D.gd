@@ -259,4 +259,4 @@ func _on_Zabor_mouse_exited():
 
 
 func _on_Well_body_entered(_body):
-	Global.usable["Can1x1"] = 10
+	Global.usable["Can1x1"] = 5

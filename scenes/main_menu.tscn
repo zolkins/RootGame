@@ -274,7 +274,7 @@ margin_top = 324.0
 margin_right = 1010.0
 margin_bottom = 348.0
 theme = ExtResource( 3 )
-value = 60.0
+value = 1.0
 
 [node name="music_volume_int" type="Label" parent="settings"]
 margin_left = 1038.0
