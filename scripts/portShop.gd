@@ -12,17 +12,10 @@ func _process(_delta):
 	$BurakPrice2.text = "$"+str(Global.burak_new_price)
 	$Today.text = "Day " + str(Global.day_counter)
 	$Tomorow.text = "Day " + str(Global.day_counter+1)
-
-
-func _on_PotatoSlider_value_changed(value):
 	$PotatoCounter.text = str($PotatoSlider.value) + "/$" + str($PotatoSlider.value*Global.potato_price)
-
-func _on_CarrotSlider_value_changed(value):
 	$CarrotCounter.text = str($CarrotSlider.value) + "/$" + str($CarrotSlider.value*Global.carrot_price)
-
-func _on_BurakSlider_value_changed(value):
 	$BurakCounter.text = str($BurakSlider.value) + "/$" + str($BurakSlider.value*Global.burak_price)
-
+	
 func _on_PotatoButton_pressed():
 	$sfx.stream = preload("res://resources/mp3/sfx/cash.mp3")
 	$sfx.play()
