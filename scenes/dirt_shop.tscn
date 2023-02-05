@@ -10,7 +10,7 @@
 [ext_resource path="res://resources/img/slotTexturePotato.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
-size = 203
+size = 150
 outline_size = 9
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
@@ -37,9 +37,9 @@ script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="Potato"]
 anchor_right = 50.0
-margin_left = -35.8555
+margin_left = -35.5978
 margin_top = 36.9411
-margin_right = -598.855
+margin_right = -598.597
 margin_bottom = 251.941
 rect_scale = Vector2( 0.1, 0.1 )
 theme = ExtResource( 2 )
@@ -48,10 +48,10 @@ text = "potato_seeds"
 align = 1
 
 [node name="Price" type="Label" parent="Potato"]
-margin_left = 9.25317
-margin_top = -34.3415
-margin_right = 149.253
-margin_bottom = 308.659
+margin_left = 0.231384
+margin_top = -34.7282
+margin_right = 339.231
+margin_bottom = 308.272
 rect_scale = Vector2( 0.1, 0.1 )
 custom_fonts/font = SubResource( 2 )
 text = "10"
@@ -67,9 +67,9 @@ script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="Carrot"]
 anchor_right = 50.0
-margin_left = -33.8152
+margin_left = -36.3928
 margin_top = 36.941
-margin_right = -624.815
+margin_right = -627.393
 margin_bottom = 251.941
 rect_scale = Vector2( 0.1, 0.1 )
 custom_fonts/font = SubResource( 1 )
@@ -77,10 +77,10 @@ text = "carrot_seeds"
 align = 1
 
 [node name="Price" type="Label" parent="Carrot"]
-margin_left = 6.78262
-margin_top = -34.5884
-margin_right = 198.783
-margin_bottom = 308.412
+margin_left = -4.68788
+margin_top = -34.4596
+margin_right = 424.312
+margin_bottom = 308.54
 rect_scale = Vector2( 0.1, 0.1 )
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 2 )
@@ -97,9 +97,9 @@ script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="Burak"]
 anchor_right = 50.0
-margin_left = -26.9395
+margin_left = -30.1615
 margin_top = 36.9301
-margin_right = -676.939
+margin_right = -680.161
 margin_bottom = 251.93
 rect_scale = Vector2( 0.1, 0.1 )
 theme = ExtResource( 2 )
@@ -108,10 +108,10 @@ text = "burak_seeds"
 align = 1
 
 [node name="Price" type="Label" parent="Burak"]
-margin_left = 5.09787
-margin_top = -34.2996
-margin_right = 234.098
-margin_bottom = 308.7
+margin_left = -5.54504
+margin_top = -33.955
+margin_right = 452.455
+margin_bottom = 309.045
 rect_scale = Vector2( 0.1, 0.1 )
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 2 )
