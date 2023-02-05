@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://resources/img/MenuIcon.png" type="Texture" id=1]
 [ext_resource path="res://resources/Hercules.otf" type="DynamicFontData" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://resources/img/back-to-the-roots-evelina-kremsdorf-transformed-transformed-transformed.jpeg" type="Texture" id=4]
 [ext_resource path="res://resources/chek_b.tres" type="Theme" id=5]
 [ext_resource path="res://resources/Neucha-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://scenes/undefined - Imgur.png" type="Texture" id=7]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -341,6 +342,11 @@ enabled_focus_mode = 0
 
 [node name="buttons" type="AudioStreamPlayer" parent="."]
 bus = "SFX"
+
+[node name="Undefined-Imgur" type="Sprite" parent="."]
+position = Vector2( 175, 683 )
+scale = Vector2( 0.487646, 0.487646 )
+texture = ExtResource( 7 )
 
 [connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]

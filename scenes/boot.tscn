@@ -2,18 +2,26 @@
 
 [ext_resource path="res://boot_.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scenes/boot.gd" type="Script" id=2]
-[ext_resource path="res://slider.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Screenshot_2.png" type="Texture" id=3]
 
 [node name="Boot" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="back" type="ColorRect" parent="."]
-margin_left = -68.0
-margin_top = -28.0
-margin_right = 1298.0
-margin_bottom = 773.0
+[node name="back2" type="ColorRect" parent="."]
+margin_left = -61.0
+margin_top = 356.0
+margin_right = 1305.0
+margin_bottom = 1157.0
 rect_pivot_offset = Vector2( -400, -149 )
-color = Color( 0.34902, 0.235294, 0.0627451, 1 )
+color = Color( 0.901961, 0.94902, 0.121569, 1 )
+
+[node name="back" type="ColorRect" parent="."]
+margin_left = -61.0
+margin_top = -443.0
+margin_right = 1305.0
+margin_bottom = 358.0
+rect_pivot_offset = Vector2( -400, -149 )
+color = Color( 0.266667, 0.588235, 1, 1 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 238.0
@@ -41,14 +49,14 @@ margin_bottom = 1113.0
 custom_fonts/font = ExtResource( 1 )
 text = "Thanks to Alexei Izvalov and ETI rector Igor Nikolayevich for organizing the location.
 
-Thanks to the Armed Forces of Ukraine for saving us from Russian aggression."
+Thanks to the Armed Forces of Ukraine for defending us from russian aggression."
 autowrap = true
 
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Slider" type="Sprite" parent="."]
 position = Vector2( 608, 378 )
-scale = Vector2( 1.98095, 1.58052 )
+scale = Vector2( 7.10056, 7.39615 )
 texture = ExtResource( 3 )
 
 [connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
