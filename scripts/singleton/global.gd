@@ -21,6 +21,7 @@ onready var usable = {"Can1x1": 5, "Shovel1x1": 10,
 onready var t_map_1 = {}
 onready var t_map_2 = {}
 onready var posle_shop:bool = false
+onready var day_counter = 1
 
 
 func _ready():
