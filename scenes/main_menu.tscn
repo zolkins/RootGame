@@ -84,9 +84,14 @@ func _on_speed_scroll_camera2_value_changed(value):
 	$settings/speed_scroll_float.text = str(value)
 
 func _on_joy_stick_b_toggled(toggle):
+	$settings/bug_with_joy.show()
 	sfx.stream = preload(\"res://resources/mp3/sfx/any_in_settings.mp3\")
 	sfx.play()
 	Global.is_phone = toggle
+
+
+func _on_exit_bug_joy_pressed():
+	$settings/bug_with_joy.hide()
 "
 
 [sub_resource type="DynamicFont" id=2]
@@ -333,6 +338,31 @@ focus_mode = 0
 theme = ExtResource( 5 )
 enabled_focus_mode = 0
 
+[node name="bug_with_joy" type="ColorRect" parent="settings"]
+margin_left = 261.0
+margin_top = 93.0
+margin_right = 1096.0
+margin_bottom = 547.0
+color = Color( 0.701961, 0.964706, 0.466667, 1 )
+
+[node name="bug_joy" type="Label" parent="settings/bug_with_joy"]
+margin_left = 33.0
+margin_top = 24.0
+margin_right = 520.0
+margin_bottom = 401.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "bug_joystick"
+autowrap = true
+
+[node name="exit_bug_joy" type="Button" parent="settings/bug_with_joy"]
+margin_left = 526.0
+margin_top = 8.0
+margin_right = 820.0
+margin_bottom = 89.28
+theme = ExtResource( 3 )
+text = "exit"
+
 [node name="buttons" type="AudioStreamPlayer" parent="."]
 bus = "SFX"
 
@@ -346,3 +376,4 @@ bus = "SFX"
 [connection signal="value_changed" from="settings/music_volume" to="." method="_on_music_volume_value_changed"]
 [connection signal="value_changed" from="settings/speed_scroll_camera2" to="." method="_on_speed_scroll_camera2_value_changed"]
 [connection signal="toggled" from="settings/joy_stick_b" to="." method="_on_joy_stick_b_toggled"]
+[connection signal="pressed" from="settings/bug_with_joy/exit_bug_joy" to="." method="_on_exit_bug_joy_pressed"]

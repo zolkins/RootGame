@@ -376,7 +376,7 @@ position = Vector2( 13.4249, 4.1604 )
 shape = SubResource( 22 )
 
 [node name="player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 1520, 650 )
+position = Vector2( 1070, 1763 )
 
 [node name="tabl_counter" type="Control" parent="YSort"]
 margin_right = 40.0
