@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://resources/shop_in.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/shop_in.gd" type="Script" id=2]
@@ -21,6 +21,10 @@
 [ext_resource path="res://resources/tile_set.tres" type="TileSet" id=19]
 [ext_resource path="res://scenes/Inst_Shop.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/dirt_shop.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/int_shop_menu.tscn" type="PackedScene" id=22]
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 64.0243, 10 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 85 )
@@ -409,6 +413,12 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -65536, 0, 0, 65534, 0, 65537, 65537, 536870912, 131072, 65538, 0, 65536, 65539, 0, 131072, 262143, 0, 65537, 196608, 1, 0, 196609, 1, 1, 196610, 536870913, 1, 196611, 536870913, 0 )
 
+[node name="market" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="market"]
+position = Vector2( 61.8761, 92.5977 )
+shape = SubResource( 30 )
+
 [node name="walls" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="walls"]
@@ -467,7 +477,7 @@ position = Vector2( 13.4249, 4.1604 )
 shape = SubResource( 19 )
 
 [node name="player" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 56.046, 74.1865 )
+position = Vector2( -12.7254, 19.4942 )
 
 [node name="predmeti" type="TileMap" parent="YSort"]
 visible = false
@@ -534,6 +544,13 @@ format = 1
 visible = false
 position = Vector2( -199, 162 )
 
+[node name="int_shop_menu" parent="." instance=ExtResource( 22 )]
+visible = false
+position = Vector2( 41.1545, 67.9591 )
+scale = Vector2( 0.7, 0.7 )
+
+[connection signal="body_entered" from="market" to="." method="_on_market_body_entered"]
+[connection signal="body_exited" from="market" to="." method="_on_market_body_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="YSort/Lodka/Port" to="YSort/player" method="_on_Port_body_entered"]
 [connection signal="body_exited" from="YSort/Lodka/Port" to="YSort/player" method="_on_Port_body_exited"]

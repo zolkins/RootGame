@@ -14,6 +14,8 @@ onready var burak_seeds_price = 100
 onready var potato_counter = 0
 onready var carrot_counter = 0
 onready var burak_counter = 0
+onready var shovel_x1x1_price = 30
+onready var can_x1x1_price = 300
 onready var usable = {"Can1x1": 5, "Shovel1x1": 10, 
 "Shovel2x2": -1, "Shovel3x3": -1, "Can2x2": -1, "Can3x3": -1}
 
