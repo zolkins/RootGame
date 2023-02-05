@@ -174,7 +174,7 @@ func _on_Music_finished():
 	
 
 func write2(map_posit, tile_typ):
-	Global.t_map_2[map_posit] = tile_typ 
+	Global.t_map_2[map_posit] = str(tile_typ) 
 
 func _on_DirtShop_PotatoPlant():
 	if Global.coins - Global.potato_price >= 0:
@@ -186,8 +186,6 @@ func _on_DirtShop_PotatoPlant():
 		write2(map_pos, "potato")
 		Global.coins -= Global.potato_seeds_price
 		$"../../Select".set_visible(false)
-		yield(get_tree().create_timer(5 + randi() % 6), "timeout")
-		$"../Rost".set_cell(map_pos.x, map_pos.y, 5)
 		if $"../Sajanie".get_cell(map_pos.x, map_pos.y) == $"../Sajanie".tile_set.find_tile_by_name("Dirt"):
 			grow(map_pos, plant_type, 1)
 		else:
@@ -203,8 +201,6 @@ func _on_DirtShop_CarrotPlant():
 		$"../Rost".set_cell(map_pos.x, map_pos.y, rostok)
 		Global.coins -= Global.carrot_seeds_price
 		$"../../Select".set_visible(false)
-		yield(get_tree().create_timer(5 + randi() % 6), "timeout")
-		$"../Rost".set_cell(map_pos.x, map_pos.y, 5)
 		if $"../Sajanie".get_cell(map_pos.x, map_pos.y) == $"../Sajanie".tile_set.find_tile_by_name("Dirt"):
 			grow(map_pos, plant_type, 1)
 		else:

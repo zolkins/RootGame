@@ -25,19 +25,22 @@ func _ready():
 				elif Global.t_map_2[Vector2(x, y)] == "burak":
 					$YSort/Rost.set_cell(x, y, 5)
 					emit_signal("rost", Vector2(x, y), "burak")
-				elif Global.t_map_2[Vector2(x, y)] == 0:
+				elif Global.t_map_2[Vector2(x, y)] == "0":
+					$YSort/Rost.set_cell(x, y, 0)
 					emit_signal("bur", Vector2(x, y))
-				elif Global.t_map_2[Vector2(x, y)] == 2:
+				elif Global.t_map_2[Vector2(x, y)] == "2":
+					$YSort/Rost.set_cell(x, y, 2)
 					emit_signal("car", Vector2(x, y))
-				elif Global.t_map_2[Vector2(x, y)] == 6:
+				elif Global.t_map_2[Vector2(x, y)] == "6":
+					$YSort/Rost.set_cell(x, y, 6)
 					emit_signal("pot", Vector2(x, y))
-				elif Global.t_map_2[Vector2(x, y)] == 1:
+				elif Global.t_map_2[Vector2(x, y)] == "1":
 					$YSort/Rost.set_cell(x, y, 1)
-				elif Global.t_map_2[Vector2(x, y)] == 3:
+				elif Global.t_map_2[Vector2(x, y)] == "3":
 					$YSort/Rost.set_cell(x, y, 3)
-				elif Global.t_map_2[Vector2(x, y)] == 7:
+				elif Global.t_map_2[Vector2(x, y)] == "7":
 					$YSort/Rost.set_cell(x, y, 7)
-				elif Global.t_map_2[Vector2(x, y)] == -1:
+				elif Global.t_map_2[Vector2(x, y)] == "-1":
 					$YSort/Rost.set_cell(x, y, -1)
 func _on_Node2D_wat(x, y):
 	yield(get_tree().create_timer(60), "timeout")
