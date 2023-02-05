@@ -499,8 +499,8 @@ cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
 format = 1
 
 [node name="DirtShop" parent="." instance=ExtResource( 16 )]
-visible = false
 position = Vector2( -199, 162 )
+scale = Vector2( 1, 1 )
 
 [connection signal="bur" from="." to="." method="_on_Node2D_bur"]
 [connection signal="car" from="." to="." method="_on_Node2D_car"]
