@@ -77,6 +77,7 @@ func _on_CanvasLayer2_use_move_vector(move_vector):
 
 func _on_CanvasLayer2_not_move():
 	$AnimatedSprite.play("idle")
+	velocity = 0
 	
 func write1(map_posit, tile_typ):
 	Global.t_map_1[map_posit] = tile_typ 
