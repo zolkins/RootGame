@@ -143,7 +143,7 @@ func _on_Shop_water():
 			yield(get_tree().create_timer(60), "timeout")
 			if $"../Sajanie".get_cell(map_position.x, map_position.y) == $"../Sajanie".tile_set.find_tile_by_name("wetDirt"):
 				$"../Sajanie".set_cell(map_position.x, map_position.y, tileid)
-				write1(map_position, $"../Sajanie".tile_set.find_tile_by_name(tileid))
+				write1(map_position, tileid)
 	
 		
 
@@ -180,7 +180,7 @@ func write2(map_posit, tile_typ):
 	Global.t_map_2[map_posit] = str(tile_typ) 
 
 func _on_DirtShop_PotatoPlant():
-	if Global.coins - Global.potato_price >= 0:
+	if Global.coins - Global.potato_seeds_price >= 0:
 		$"../Alert".set_cell(map_pos.x, map_pos.y, -1)
 		$"../../DirtShop".set_visible(false)
 		var plant_type = "potato"
@@ -195,7 +195,7 @@ func _on_DirtShop_PotatoPlant():
 			grow(map_pos, plant_type, 1.5)
 
 func _on_DirtShop_CarrotPlant():
-	if Global.coins - Global.carrot_price >= 0:
+	if Global.coins - Global.carrot_seeds_price >= 0:
 		$"../Alert".set_cell(map_pos.x, map_pos.y, -1)
 		$"../../DirtShop".set_visible(false)
 		var plant_type = "carrot"
@@ -210,7 +210,7 @@ func _on_DirtShop_CarrotPlant():
 			grow(map_pos, plant_type, 1.5)
 
 func _on_DirtShop_BurakPlant():
-	if Global.coins - Global.burak_price >= 0:
+	if Global.coins - Global.burak_seeds_price >= 0:
 		$"../Alert".set_cell(map_pos.x, map_pos.y, -1)
 		$"../../DirtShop".set_visible(false)
 		var plant_type = "burak"

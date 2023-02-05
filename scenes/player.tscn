@@ -319,6 +319,7 @@ texture_pressed = ExtResource( 7 )
 expand = true
 
 [node name="DayChanging" parent="CanvasLayer" instance=ExtResource( 8 )]
+visible = false
 position = Vector2( -7, -4 )
 
 [node name="CanvasLayer2" parent="." instance=ExtResource( 6 )]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://resources/img/roots/potato_full.png" type="Texture" id=1]
 [ext_resource path="res://resources/img/Puase_back.png" type="Texture" id=2]
@@ -8,145 +8,181 @@
 [ext_resource path="res://resources/img/sellButton.png" type="Texture" id=6]
 [ext_resource path="res://resources/img/sellButton2.png" type="Texture" id=7]
 [ext_resource path="res://scripts/portShop.gd" type="Script" id=8]
+[ext_resource path="res://resources/Neucha-Regular.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://resources/img/arrow.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
 font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 96
+font_data = ExtResource( 9 )
 
 [node name="portShop" type="Node2D"]
 scale = Vector2( 2.21754, 2.51084 )
 script = ExtResource( 8 )
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 54.1141, 33.8533 )
+position = Vector2( 76.5491, 34.2601 )
 rotation = -3.14159
-scale = Vector2( 1.00826, -0.555109 )
+scale = Vector2( 1.42305, -0.555109 )
 texture = ExtResource( 2 )
 
 [node name="Potato" type="Sprite" parent="."]
-position = Vector2( 32.9194, 15.5327 )
+position = Vector2( 77.3382, 15.9395 )
 scale = Vector2( 0.74634, 0.74634 )
 texture = ExtResource( 1 )
 
 [node name="PotatoCounter" type="Label" parent="."]
-margin_left = 40.5856
-margin_top = 5.17756
-margin_right = 243.586
-margin_bottom = 81.1776
+margin_left = 85.0044
+margin_top = 5.58437
+margin_right = 288.005
+margin_bottom = 81.5844
 rect_scale = Vector2( 0.2, 0.2 )
 custom_fonts/font = SubResource( 1 )
 text = "1/$10"
 align = 1
 
 [node name="PotatoPrice" type="Label" parent="."]
-margin_left = -8.11712
-margin_top = 9.16029
-margin_right = 209.883
-margin_bottom = 88.1603
+margin_left = -5.86235
+margin_top = 9.55856
+margin_right = 212.138
+margin_bottom = 88.5586
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 1 )
+text = "$1234"
+align = 1
+
+[node name="PotatoPrice2" type="Label" parent="."]
+margin_left = 32.9194
+margin_top = 9.55856
+margin_right = 250.919
+margin_bottom = 88.5586
 rect_scale = Vector2( 0.2, 0.2 )
 custom_fonts/font = SubResource( 1 )
 text = "$1234"
 align = 1
 
 [node name="PotatoSlider" type="HSlider" parent="."]
-margin_left = 42.0
-margin_top = 17.0
-margin_right = 229.0
-margin_bottom = 33.0
+margin_left = 86.4188
+margin_top = 17.4068
+margin_right = 273.419
+margin_bottom = 33.4068
 rect_scale = Vector2( 0.2, 0.2 )
 value = 1.0
 
 [node name="Carrot" type="Sprite" parent="."]
-position = Vector2( 32.9194, 34.2515 )
+position = Vector2( 77.3382, 34.6583 )
 scale = Vector2( 0.689971, 0.689971 )
 texture = ExtResource( 3 )
 
 [node name="CarrotCounter" type="Label" parent="."]
-margin_left = 39.6837
-margin_top = 24.2947
-margin_right = 251.684
-margin_bottom = 100.295
+margin_left = 84.1025
+margin_top = 24.7015
+margin_right = 296.103
+margin_bottom = 100.702
 rect_scale = Vector2( 0.2, 0.2 )
 custom_fonts/font = SubResource( 1 )
 text = "1/$20"
 align = 1
 
 [node name="CarrotPrice" type="Label" parent="."]
-margin_left = -1.8038
-margin_top = 28.2774
-margin_right = 151.196
-margin_bottom = 104.277
+margin_left = 0.901917
+margin_top = 28.6757
+margin_right = 153.902
+margin_bottom = 104.676
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 1 )
+text = "$1234"
+align = 1
+
+[node name="CarrotPrice2" type="Label" parent="."]
+margin_left = 39.2327
+margin_top = 28.6757
+margin_right = 192.232
+margin_bottom = 104.676
 rect_scale = Vector2( 0.2, 0.2 )
 custom_fonts/font = SubResource( 1 )
 text = "$1234"
 align = 1
 
 [node name="CarrotSlider" type="HSlider" parent="."]
-margin_left = 42.0
-margin_top = 36.0
-margin_right = 236.0
-margin_bottom = 52.0
+margin_left = 86.4188
+margin_top = 36.4068
+margin_right = 280.419
+margin_bottom = 52.4068
 rect_scale = Vector2( 0.2, 0.2 )
 value = 1.0
 
 [node name="Burak" type="Sprite" parent="."]
-position = Vector2( 32.4685, 54.9618 )
+position = Vector2( 76.8873, 55.3686 )
 scale = Vector2( 0.772403, 0.736893 )
 texture = ExtResource( 4 )
 
 [node name="BurakCounter" type="Label" parent="."]
-margin_left = 41.0
-margin_top = 45.0
-margin_right = 246.0
-margin_bottom = 121.0
+margin_left = 85.4188
+margin_top = 45.4068
+margin_right = 290.419
+margin_bottom = 121.407
 rect_scale = Vector2( 0.2, 0.2 )
 custom_fonts/font = SubResource( 1 )
 text = "1/$50"
 align = 1
 
 [node name="BurakPrice" type="Label" parent="."]
-margin_left = -2.25476
-margin_top = 48.1911
-margin_right = 150.745
-margin_bottom = 124.191
+margin_left = 1.35285
+margin_top = 48.5893
+margin_right = 154.353
+margin_bottom = 124.589
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 1 )
+text = "$1234"
+align = 1
+
+[node name="BurakPrice2" type="Label" parent="."]
+margin_left = 39.6836
+margin_top = 48.5893
+margin_right = 192.683
+margin_bottom = 124.589
 rect_scale = Vector2( 0.2, 0.2 )
 custom_fonts/font = SubResource( 1 )
 text = "$1234"
 align = 1
 
 [node name="BurakSlider" type="HSlider" parent="."]
-margin_left = 42.0
-margin_top = 57.0
-margin_right = 240.0
-margin_bottom = 73.0
+margin_left = 86.4188
+margin_top = 57.4068
+margin_right = 284.419
+margin_bottom = 73.4068
 rect_scale = Vector2( 0.2, 0.2 )
 value = 1.0
 
 [node name="PotatoButton" type="TextureButton" parent="."]
-margin_left = 85.2296
-margin_top = 5.17755
-margin_right = 142.23
-margin_bottom = 55.1776
+margin_left = 129.648
+margin_top = 5.58436
+margin_right = 186.649
+margin_bottom = 55.5844
 rect_scale = Vector2( 0.3, 0.3 )
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 expand = true
 
 [node name="CarrotButton" type="TextureButton" parent="."]
-margin_left = 84.7786
-margin_top = 26.286
-margin_right = 141.779
-margin_bottom = 76.286
+margin_left = 129.197
+margin_top = 26.6928
+margin_right = 186.198
+margin_bottom = 76.6928
 rect_scale = Vector2( 0.3, 0.3 )
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 expand = true
 
 [node name="BurakButton" type="TextureButton" parent="."]
-margin_left = 84.7786
-margin_top = 46.9962
-margin_right = 141.779
-margin_bottom = 96.9962
+margin_left = 129.197
+margin_top = 47.403
+margin_right = 186.198
+margin_bottom = 97.403
 rect_scale = Vector2( 0.3, 0.3 )
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
@@ -154,6 +190,39 @@ expand = true
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
 bus = "SFX"
+
+[node name="Today" type="Label" parent="."]
+margin_left = 7.66615
+margin_top = 1.59309
+margin_right = 199.666
+margin_bottom = 103.593
+rect_scale = Vector2( 0.0989631, 0.0989631 )
+custom_fonts/font = SubResource( 2 )
+text = "Day x"
+
+[node name="Tomorow" type="Label" parent="."]
+margin_left = 43.2912
+margin_top = 1.99136
+margin_right = 312.291
+margin_bottom = 103.991
+rect_scale = Vector2( 0.0989631, 0.0989631 )
+custom_fonts/font = SubResource( 2 )
+text = "Day x+1"
+
+[node name="Arrow" type="Sprite" parent="."]
+position = Vector2( 35.6251, 16.7275 )
+scale = Vector2( 0.299081, 0.299081 )
+texture = ExtResource( 10 )
+
+[node name="Arrow2" type="Sprite" parent="."]
+position = Vector2( 35.6251, 35.8446 )
+scale = Vector2( 0.299081, 0.299081 )
+texture = ExtResource( 10 )
+
+[node name="Arrow3" type="Sprite" parent="."]
+position = Vector2( 35.6251, 56.1565 )
+scale = Vector2( 0.299081, 0.299081 )
+texture = ExtResource( 10 )
 
 [connection signal="value_changed" from="PotatoSlider" to="." method="_on_PotatoSlider_value_changed"]
 [connection signal="value_changed" from="CarrotSlider" to="." method="_on_CarrotSlider_value_changed"]
