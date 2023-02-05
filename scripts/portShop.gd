@@ -7,6 +7,11 @@ func _process(_delta):
 	$PotatoPrice.text = "$"+str(Global.potato_price)
 	$CarrotPrice.text = "$"+str(Global.carrot_price)
 	$BurakPrice.text = "$"+str(Global.burak_price)
+	$PotatoPrice2.text = "$"+str(Global.potato_new_price)
+	$CarrotPrice2.text = "$"+str(Global.carrot_new_price)
+	$BurakPrice2.text = "$"+str(Global.burak_new_price)
+	$Today.text = "Day " + str(Global.day_counter)
+	$Tomorow.text = "Day " + str(Global.day_counter+1)
 
 
 func _on_PotatoSlider_value_changed(value):

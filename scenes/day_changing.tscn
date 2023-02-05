@@ -12,10 +12,10 @@ font_data = ExtResource( 2 )
 script = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -14.0
-margin_top = -19.0
-margin_right = 1297.0
-margin_bottom = 732.0
+margin_left = -414.0
+margin_top = -267.0
+margin_right = 1583.0
+margin_bottom = 908.0
 color = Color( 0, 0, 0, 0.670588 )
 
 [node name="OldDay" type="Label" parent="."]
