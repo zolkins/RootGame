@@ -26,6 +26,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Faq" type="Sprite" parent="."]
+visible = false
 position = Vector2( 103, -13 )
 scale = Vector2( 1.375, 1.375 )
 texture = ExtResource( 2 )
