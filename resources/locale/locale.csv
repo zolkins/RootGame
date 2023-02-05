@@ -10,7 +10,7 @@ music_volume,Гучність музики,Громкость музыки,Music
 speed_scroll_camera,Швидкість наближення камери,Скорость приближения камеры,Camera zoom step
 bug_joystick,Управління з мобільного пристрою містить баги,Управление с мобильного устройства содержит баги,Mobile device control contains bugs
 shovel,Лопата,Лопата,Shovel
-can,Лійка,Лейка,Watering can
+can,Лійка,Лейка,Can
 Shovel1x1,Лопата1x1,Лопата1x1,Shovel1x1
 Shovel2x2,Лопата2x2,Лопата2x2,Shovel2x2
 Shovel3x3,Лопата3x3,Лопата3x3,Shovel3x3
@@ -22,3 +22,8 @@ potato_seeds,Насіння картоплі,Семечки картофеля,P
 carrot_seeds,Насіння моркви,Семечки моркови,Carrot seeds
 burak_seeds,Насіння буряку,Семечки свеклы,beetroot seeds
 close,Зачинити,Закрыть,Close
+joy_stick,Джойстик,Джойстик,Joystick
+Go to Root_Menu,Перейти в меню,Перейти в меню,Go to menu
+music,Музика,Музика,Music
+Paused,Пауза,Пауза,Paused
+faq_1,Чтобы набрать воду подойди к колодцу,Щоб набрати воду підійди до колодязя,Go to the well to get water
