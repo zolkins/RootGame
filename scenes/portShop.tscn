@@ -152,6 +152,9 @@ texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 expand = true
 
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+bus = "SFX"
+
 [connection signal="value_changed" from="PotatoSlider" to="." method="_on_PotatoSlider_value_changed"]
 [connection signal="value_changed" from="CarrotSlider" to="." method="_on_CarrotSlider_value_changed"]
 [connection signal="value_changed" from="BurakSlider" to="." method="_on_BurakSlider_value_changed"]

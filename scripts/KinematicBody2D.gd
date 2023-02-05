@@ -12,6 +12,8 @@ var m_in_zabor = false
 var rand_m:int
 
 func _ready():
+	randomize()
+	_on_Music_finished()
 	$CanvasLayer/Pause_menu/music_slider.value = Global.music_volume
 	$CanvasLayer/Pause_menu/music_label.text = (str(Global.music_volume) + "%")
 
