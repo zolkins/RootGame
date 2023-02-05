@@ -91,6 +91,8 @@ func _on_joy_stick_b_toggled(toggle):
 
 
 func _on_exit_bug_joy_pressed():
+	sfx.stream = preload(\"res://resources/mp3/sfx/any_in_settings.mp3\")
+	sfx.play()
 	$settings/bug_with_joy.hide()
 "
 
