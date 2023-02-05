@@ -25,12 +25,14 @@ func _ready():
 
 
 func _on_NewGame_pressed():
+	Global.posle_shop = false
 	sfx.stream = preload(\"res://resources/mp3/sfx/start_play.wav\")
 	sfx.play()
 	yield(get_tree().create_timer(0.7), \"timeout\")
 	get_tree().change_scene(newMap)
 
 func _on_Continue_pressed():
+	Global.posle_shop = false
 	sfx.stream = preload(\"res://resources/mp3/sfx/start_play.wav\")
 	yield(get_tree().create_timer(0.7), \"timeout\")
 	sfx.play()

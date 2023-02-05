@@ -20,6 +20,7 @@ onready var usable = {"Can1x1": 5, "Shovel1x1": 10,
 "Shovel2x2": -1, "Shovel3x3": -1, "Can2x2": -1, "Can3x3": -1}
 onready var t_map_1 = {}
 onready var t_map_2 = {}
+onready var posle_shop:bool = false
 
 
 func _ready():

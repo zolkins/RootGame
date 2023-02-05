@@ -7,6 +7,10 @@ signal car
 signal pot
 
 func _ready():
+	if Global.posle_shop:
+		$YSort/player.set_position(Vector2(1520,650))
+	else:
+		$YSort/player.set_position(Vector2(1080,1780))
 	for x in range(64):
 		for y in range(64):
 			if Global.t_map_1[Vector2(x, y)] != null:
