@@ -37,7 +37,7 @@ margin_bottom = 61.0
 rect_scale = Vector2( 0.3, 0.3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Лопата"
+text = "shovel"
 
 [node name="lop_buy" type="TextureButton" parent="."]
 margin_left = 84.0
@@ -74,7 +74,7 @@ margin_bottom = 132.0
 rect_scale = Vector2( 0.3, 0.3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "Лейка"
+text = "can"
 
 [node name="can_buy" type="TextureButton" parent="."]
 margin_left = 84.0

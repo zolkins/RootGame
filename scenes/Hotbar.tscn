@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://resources/img/delete.png" type="Texture" id=1]
 [ext_resource path="res://resources/img/InventSlot.png" type="Texture" id=2]
@@ -16,6 +16,14 @@
 [ext_resource path="res://resources/img/selectedItem.png" type="Texture" id=14]
 [ext_resource path="res://resources/tile_set.tres" type="TileSet" id=15]
 [ext_resource path="res://resources/Hercules.otf" type="DynamicFontData" id=16]
+[ext_resource path="res://resources/Neucha-Regular.ttf" type="DynamicFontData" id=17]
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 17 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -62,11 +70,13 @@ scale = Vector2( 1.525, 1.525 )
 texture = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="Items/GridContainer/Slot 1"]
-margin_left = 44.0
+margin_left = 40.0
 margin_top = 11.0
-margin_right = 120.0
-margin_bottom = 25.0
+margin_right = 246.0
+margin_bottom = 76.0
+rect_scale = Vector2( 0.3, 0.3 )
 theme = ExtResource( 13 )
+custom_fonts/font = SubResource( 2 )
 text = "Shovel1x1"
 
 [node name="Slot 2" type="Panel" parent="Items/GridContainer"]
@@ -83,11 +93,13 @@ scale = Vector2( 1.525, 1.525 )
 texture = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="Items/GridContainer/Slot 2"]
-margin_left = 44.0
+margin_left = 40.0
 margin_top = 11.0
-margin_right = 120.0
-margin_bottom = 25.0
+margin_right = 246.0
+margin_bottom = 76.0
+rect_scale = Vector2( 0.3, 0.3 )
 theme = ExtResource( 13 )
+custom_fonts/font = SubResource( 2 )
 text = "Shovel1x1"
 
 [node name="Slot 3" type="Panel" parent="Items/GridContainer"]
@@ -104,11 +116,13 @@ scale = Vector2( 1.525, 1.525 )
 texture = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="Items/GridContainer/Slot 3"]
-margin_left = 44.0
+margin_left = 40.0
 margin_top = 11.0
-margin_right = 120.0
-margin_bottom = 25.0
+margin_right = 246.0
+margin_bottom = 76.0
+rect_scale = Vector2( 0.3, 0.3 )
 theme = ExtResource( 13 )
+custom_fonts/font = SubResource( 2 )
 text = "Shovel1x1"
 
 [node name="Slot 4" type="Panel" parent="Items/GridContainer"]
@@ -125,11 +139,13 @@ scale = Vector2( 1.525, 1.525 )
 texture = ExtResource( 11 )
 
 [node name="Label" type="Label" parent="Items/GridContainer/Slot 4"]
-margin_left = 44.0
+margin_left = 40.0
 margin_top = 11.0
-margin_right = 120.0
-margin_bottom = 25.0
+margin_right = 246.0
+margin_bottom = 76.0
+rect_scale = Vector2( 0.3, 0.3 )
 theme = ExtResource( 13 )
+custom_fonts/font = SubResource( 2 )
 text = "Shovel1x1"
 
 [node name="Slot 5" type="Panel" parent="Items/GridContainer"]
@@ -146,11 +162,13 @@ scale = Vector2( 1.525, 1.525 )
 texture = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="Items/GridContainer/Slot 5"]
-margin_left = 44.0
+margin_left = 40.0
 margin_top = 11.0
-margin_right = 120.0
-margin_bottom = 25.0
+margin_right = 246.0
+margin_bottom = 76.0
+rect_scale = Vector2( 0.3, 0.3 )
 theme = ExtResource( 13 )
+custom_fonts/font = SubResource( 2 )
 text = "Shovel1x1"
 
 [node name="Slot 6" type="Panel" parent="Items/GridContainer"]
@@ -167,11 +185,13 @@ scale = Vector2( 1.525, 1.525 )
 texture = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="Items/GridContainer/Slot 6"]
-margin_left = 44.0
+margin_left = 40.0
 margin_top = 11.0
-margin_right = 120.0
-margin_bottom = 25.0
+margin_right = 246.0
+margin_bottom = 76.0
+rect_scale = Vector2( 0.3, 0.3 )
 theme = ExtResource( 13 )
+custom_fonts/font = SubResource( 2 )
 text = "Shovel1x1"
 
 [node name="Delete" type="Button" parent="Items"]
@@ -183,10 +203,12 @@ icon = ExtResource( 1 )
 expand_icon = true
 
 [node name="Label" type="Label" parent="Items/Delete"]
-margin_left = 44.0
+margin_left = 40.0
 margin_top = 7.0
-margin_right = 96.0
-margin_bottom = 21.0
+margin_right = 201.0
+margin_bottom = 72.0
+rect_scale = Vector2( 0.3, 0.3 )
+custom_fonts/font = SubResource( 2 )
 text = "remove"
 
 [node name="Select" type="Sprite" parent="Items"]
