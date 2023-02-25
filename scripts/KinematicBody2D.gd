@@ -288,4 +288,3 @@ func _on_Well_body_entered(_body):
 
 func _on_Node2D_rost(vect, ty):
 	grow(vect, ty, 1)
-	pass # Replace with function body.
