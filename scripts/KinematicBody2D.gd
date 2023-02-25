@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 export (int) var speed = 200
-#onready var _animated_sprite = $animated_sprite
 var velocity = Vector2()
 onready var fss = $Foot_step
 var map_pos = null
@@ -12,10 +11,10 @@ var m_in_zabor = false
 var rand_m:int
 
 func _ready():
+	$CanvasLayer/Pause_menu/music_slider.value = Global.music_volume
 	randomize()
 	_on_Music_finished()
-	$CanvasLayer/Pause_menu/music_slider.value = Global.music_volume
-	$CanvasLayer/Pause_menu/music_label.text = (str(Global.music_volume) + "%")
+
 
 # Ходьба
 func move():
@@ -47,6 +46,7 @@ func move():
 
 
 func _process(_delta):
+	$CanvasLayer/Pause_menu/music_label.text = (str(Global.music_volume*100) + "%")
 	if Global.is_phone:
 		$CanvasLayer2.show()
 	else:
@@ -260,8 +260,6 @@ func grow(plant_pos, plant_type, coef):
 
 func _on_music_slider_value_changed(value):
 	Global.music_volume = value
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), value)
-	$CanvasLayer/Pause_menu/music_label.text = (str(Global.music_volume) + "%")
 
 
 func _on_Port_body_entered(body):

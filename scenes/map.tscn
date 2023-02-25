@@ -394,7 +394,7 @@ tile_data = PoolIntArray( 0, 12, 0, 1, 12, 0, 2, 12, 0, 3, 12, 0, 4, 12, 0, 5, 1
 [node name="woman" type="AnimatedSprite" parent="YSort"]
 position = Vector2( 1232, 1892 )
 frames = SubResource( 31 )
-frame = 1
+frame = 2
 playing = true
 script = ExtResource( 32 )
 

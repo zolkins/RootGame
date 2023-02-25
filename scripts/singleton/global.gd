@@ -4,7 +4,7 @@ onready var zoom_speed = Vector2(.05,.05)
 onready var coins = 100
 onready var is_phone = false
 onready var is_near = false
-onready var music_volume = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music"))
+onready var music_volume = 1
 onready var potato_min_price = 11
 onready var carrot_min_price = 56
 onready var burak_min_price = 111
@@ -29,9 +29,10 @@ onready var t_map_2 = {}
 onready var posle_shop:bool = false
 onready var day_counter = 1
 
+func _process(delta):
+	AudioServer.set_bus_volume_db(1, (20.0 * log(music_volume) / log(10.0)))
 
 func _ready():
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), 50)
 	TranslationServer.set_locale(languge)
 	for x in range(64):
 		for y in range(64):

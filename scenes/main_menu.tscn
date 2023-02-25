@@ -13,16 +13,13 @@ script/source = "extends Control
 
 var newMap = \"res://scenes/map.tscn\"
 var continueMap = \"res://scenes/map.tscn\"
-var music_volume:float
 onready var sfx = $buttons
 
 func _ready():
-	#Установка показателей для слайдера
-	Global.music_volume = AudioServer.get_bus_volume_db(AudioServer.get_bus_index(\"Music\"))
-	$settings/music_volume_int.text = (str(Global.music_volume) + \"%\")
 	$settings/music_volume.value = Global.music_volume
 
-
+func _process(delta):
+	$settings/music_volume_int.text = (str(Global.music_volume*100) + \"%\")
 
 
 func _on_NewGame_pressed():
@@ -75,9 +72,6 @@ func _on_language_item_selected(id):
 
 func _on_music_volume_value_changed(value):
 	Global.music_volume = value
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(\"Music\"), Global.music_volume)
-	$settings/music_volume_int.text = (str(Global.music_volume) + \"%\")
-	
 
 
 func _on_speed_scroll_camera2_value_changed(value):
@@ -283,6 +277,8 @@ margin_top = 324.0
 margin_right = 1010.0
 margin_bottom = 348.0
 theme = ExtResource( 3 )
+max_value = 1.0
+step = 0.01
 value = 1.0
 
 [node name="music_volume_int" type="Label" parent="settings"]
