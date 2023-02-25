@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Inst_Shop.tscn" type="PackedScene" id=2]
@@ -30,6 +30,37 @@
 [ext_resource path="res://resources/faq/faq_2.tscn" type="PackedScene" id=28]
 [ext_resource path="res://resources/faq/faq_3.tscn" type="PackedScene" id=29]
 [ext_resource path="res://resources/faq/faq_u.tscn" type="PackedScene" id=30]
+[ext_resource path="res://resources/img/Woman_idle.png" type="Texture" id=31]
+[ext_resource path="res://scenes/woman.gd" type="Script" id=32]
+[ext_resource path="res://resources/button_bl.tres" type="Theme" id=33]
+[ext_resource path="res://resources/coinns.tres" type="DynamicFont" id=34]
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 31 )
+region = Rect2( 24, 0, 24, 48 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 31 )
+region = Rect2( 72, 0, 24, 48 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 31 )
+region = Rect2( 120, 0, 24, 48 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 31 )
+region = Rect2( 168, 0, 24, 48 )
+
+[sub_resource type="SpriteFrames" id=31]
+animations = [ {
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.5
+} ]
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 25, 25 )
 
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 22.2363, 13.2243 )
@@ -360,6 +391,79 @@ tile_data = PoolIntArray( 0, 12, 0, 1, 12, 0, 2, 12, 0, 3, 12, 0, 4, 12, 0, 5, 1
 
 [node name="YSort" type="YSort" parent="."]
 
+[node name="woman" type="AnimatedSprite" parent="YSort"]
+position = Vector2( 1232, 1892 )
+frames = SubResource( 31 )
+frame = 1
+playing = true
+script = ExtResource( 32 )
+
+[node name="Area2D" type="Area2D" parent="YSort/woman"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/woman/Area2D"]
+position = Vector2( 9, 20 )
+shape = SubResource( 32 )
+
+[node name="Control" type="Control" parent="YSort/woman"]
+visible = false
+margin_left = 1.0
+margin_top = -22.0
+margin_right = 41.0
+margin_bottom = 18.0
+rect_scale = Vector2( 1.96813, 1.96813 )
+
+[node name="ColorRect" type="ColorRect" parent="YSort/woman/Control"]
+margin_left = -91.0
+margin_top = -51.0
+margin_right = 98.0
+margin_bottom = 76.0
+color = Color( 0.105882, 0.0980392, 0.113725, 0.619608 )
+
+[node name="money" type="Label" parent="YSort/woman/Control"]
+margin_left = -77.0
+margin_top = 14.1943
+margin_right = 735.0
+margin_bottom = 176.194
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 34 )
+align = 1
+autowrap = true
+
+[node name="Label" type="Label" parent="YSort/woman/Control"]
+margin_left = -77.0
+margin_top = -47.0
+margin_right = 753.0
+margin_bottom = 208.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 34 )
+text = "tochno?"
+align = 1
+autowrap = true
+
+[node name="yes" type="Button" parent="YSort/woman/Control"]
+margin_left = -64.0
+margin_top = 51.0
+margin_right = 241.0
+margin_bottom = 146.0
+rect_scale = Vector2( 0.2, 0.2 )
+theme = ExtResource( 33 )
+text = "yes"
+
+[node name="no" type="Button" parent="YSort/woman/Control"]
+margin_left = 10.0
+margin_top = 51.0
+margin_right = 315.0
+margin_bottom = 146.0
+rect_scale = Vector2( 0.2, 0.2 )
+theme = ExtResource( 33 )
+text = "no"
+
+[node name="faq_u" parent="YSort" instance=ExtResource( 30 )]
+position = Vector2( 1153, 1887 )
+text = "faq_4"
+
 [node name="faq_1" parent="YSort" instance=ExtResource( 20 )]
 position = Vector2( 1157, 1165 )
 
@@ -382,7 +486,6 @@ texture = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Lodka/Port"]
 position = Vector2( 12.2362, 8.46942 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 22 )
 
 [node name="player" parent="YSort" instance=ExtResource( 1 )]
@@ -511,15 +614,15 @@ format = 1
 position = Vector2( -199, 162 )
 scale = Vector2( 1, 1 )
 
-[node name="faq_u" parent="." instance=ExtResource( 30 )]
-position = Vector2( 1194, 1900 )
-text = "faq_4"
-
 [connection signal="bur" from="." to="." method="_on_Node2D_bur"]
 [connection signal="car" from="." to="." method="_on_Node2D_car"]
 [connection signal="pot" from="." to="." method="_on_Node2D_pot"]
 [connection signal="rost" from="." to="YSort/player" method="_on_Node2D_rost"]
 [connection signal="wat" from="." to="." method="_on_Node2D_wat"]
+[connection signal="body_entered" from="YSort/woman/Area2D" to="YSort/woman" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="YSort/woman/Area2D" to="YSort/woman" method="_on_Area2D_body_exited"]
+[connection signal="pressed" from="YSort/woman/Control/yes" to="YSort/woman" method="_on_yes_pressed"]
+[connection signal="pressed" from="YSort/woman/Control/no" to="YSort/woman" method="_on_no_pressed"]
 [connection signal="body_entered" from="YSort/Lodka/Port" to="YSort/player" method="_on_Port_body_entered"]
 [connection signal="body_exited" from="YSort/Lodka/Port" to="YSort/player" method="_on_Port_body_exited"]
 [connection signal="mouse_entered" from="YSort/Zabor" to="YSort/player" method="_on_Zabor_mouse_entered"]

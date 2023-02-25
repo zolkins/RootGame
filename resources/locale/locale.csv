@@ -29,3 +29,8 @@ Paused,Пауза,Пауза,Paused
 faq_1,Щоб набрати воду підійди до колодязя,Чтобы набрать воду подойди к колодцу,Go to the well to get water
 faq_2,"Це порт, тут ти можеш продавати коренеплоди.","Это порт,  тут ты можешь продавать корнеплоды.",This is a port where you can sell root crops.
 faq_3,"Це магазин інструментів, придбай лопату!","Это магазин инструментов, купи лопату!","It's a tool store, buy a shovel!"
+faq_4,Коли назбираєш 2500 купляй квиток на відпочинок!,Когда соберешь 2500 покупай билет на отдых!,"When you save up 2500, buy a ticket for a vacation!"
+tochno?,"Це кінець, ви впевнені?","Это конец, вы уверены?","This is the end, are you sure?"
+yes,Так,Да,Yes
+no,Ні,Нет,No
+not money,Не вистачає,Не хватает,Not enough money
