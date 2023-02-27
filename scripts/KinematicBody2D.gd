@@ -7,9 +7,8 @@ var map_pos = null
 var plant_map = {}
 var m_in_zabor = false
 var toggle = false
-
-
 var rand_m:int
+
 
 func _ready():
 	$CanvasLayer/Pause_menu/music_slider.value = Global.music_volume
@@ -55,7 +54,7 @@ func _process(_delta):
 		move()
 	if velocity:
 		$"../../DirtShop".set_visible(false)
-		
+
 
 func _on_CanvasLayer2_use_move_vector(move_vector):
 	velocity = move_vector.normalized()*speed
@@ -97,7 +96,8 @@ func _on_Shop_dig():
 				$"../Sajanie".set_cell(map_position.x, map_position.y, -1)
 				$"../Alert".set_cell(map_position.x, map_position.y, -1)
 				write1(map_position, -1)
-		
+
+
 func _on_Shop_selec():
 	if Global.is_near:
 		$"../../Select".set_visible(true)
@@ -105,9 +105,11 @@ func _on_Shop_selec():
 		var tileid = $"../../Select".tile_set.find_tile_by_name("1")
 		$"../../Select".clear()
 		$"../../Select".set_cell(map_position.x, map_position.y, tileid)
-	
+
+
 func _on_Shop_del():
 	$"../../Select".set_visible(false)
+
 
 func _on_Shop_touch():
 	if Global.is_near:
@@ -132,7 +134,8 @@ func _on_Shop_touch():
 			$"../Rost".set_cell(map_position.x, map_position.y, -1)
 			write2(map_position, -1)
 			$"../Alert".set_cell(map_position.x, map_position.y, 0)
-		
+
+
 func _on_Shop_water():
 	var map_position = $"../Sajanie".world_to_map(get_global_mouse_position())
 	var tileid = $"../Sajanie".tile_set.find_tile_by_name("Dirt")
@@ -145,14 +148,15 @@ func _on_Shop_water():
 			if $"../Sajanie".get_cell(map_position.x, map_position.y) == $"../Sajanie".tile_set.find_tile_by_name("wetDirt"):
 				$"../Sajanie".set_cell(map_position.x, map_position.y, tileid)
 				write1(map_position, tileid)
-	
-		
+
 
 func _on_Area2D_mouse_entered():
 	Global.is_near = true
 
+
 func _on_Area2D_mouse_exited():
 	Global.is_near = false
+
 
 func _on_Music_finished():
 	rand_m = rand_range(0,9)
@@ -175,10 +179,11 @@ func _on_Music_finished():
 	elif rand_m == 8:
 		$Music.stream = preload("res://resources/mp3/music/Adventure pack 1 ogg/hurry_up_and_run.ogg")
 	$Music.play()
-	
+
 
 func write2(map_posit, tile_typ):
 	Global.t_map_2[map_posit] = str(tile_typ) 
+
 
 func _on_DirtShop_PotatoPlant():
 	if Global.coins - Global.potato_seeds_price >= 0:
@@ -195,6 +200,7 @@ func _on_DirtShop_PotatoPlant():
 		else:
 			grow(map_pos, plant_type, 1.5)
 
+
 func _on_DirtShop_CarrotPlant():
 	if Global.coins - Global.carrot_seeds_price >= 0:
 		$"../Alert".set_cell(map_pos.x, map_pos.y, -1)
@@ -209,6 +215,7 @@ func _on_DirtShop_CarrotPlant():
 			grow(map_pos, plant_type, 1)
 		else:
 			grow(map_pos, plant_type, 1.5)
+
 
 func _on_DirtShop_BurakPlant():
 	if Global.coins - Global.burak_seeds_price >= 0:
@@ -225,6 +232,7 @@ func _on_DirtShop_BurakPlant():
 		else:
 			grow(map_pos, plant_type, 1.5)
 
+
 func _input(event):
 	if Input.is_action_pressed("pause"):
 		toggle = !toggle
@@ -232,10 +240,12 @@ func _input(event):
 		$sfx.play()
 		$CanvasLayer/Pause_menu.set_visible(toggle)
 
+
 func _on_go_to_settings_toggled(toggle):
 	$sfx.stream = preload("res://resources/mp3/sfx/any_in_settings.mp3")
 	$sfx.play()
 	$CanvasLayer/Pause_menu.set_visible(toggle)
+
 
 func grow(plant_pos, plant_type, coef):
 	if plant_type == "potato":
@@ -266,6 +276,7 @@ func grow(plant_pos, plant_type, coef):
 		$"../Rost".set_cell(plant_pos.x, plant_pos.y, 1)
 		write2(plant_pos, 1)
 
+
 func _on_music_slider_value_changed(value):
 	Global.music_volume = value
 
@@ -273,6 +284,8 @@ func _on_music_slider_value_changed(value):
 func _on_Port_body_entered(body):
 	if body.name == "player":
 		$CanvasLayer/portShop.set_visible(true)
+
+
 func _on_Port_body_exited(body):
 	if body.name == "player":
 		$CanvasLayer/portShop.set_visible(false)
@@ -282,8 +295,11 @@ func _on_go_menu_pressed():
 	$sfx.play()
 	get_tree().change_scene("res://scenes/main_menu.tscn")
 
+
 func _on_Zabor_mouse_entered():
 	m_in_zabor = true
+
+
 func _on_Zabor_mouse_exited():
 	m_in_zabor = false
 
