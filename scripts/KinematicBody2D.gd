@@ -6,6 +6,7 @@ onready var fss = $Foot_step
 var map_pos = null
 var plant_map = {}
 var m_in_zabor = false
+var toggle = false
 
 
 var rand_m:int
@@ -223,7 +224,14 @@ func _on_DirtShop_BurakPlant():
 			grow(map_pos, plant_type, 1)
 		else:
 			grow(map_pos, plant_type, 1.5)
-		
+
+func _input(event):
+	if Input.is_action_pressed("pause"):
+		toggle = !toggle
+		$sfx.stream = preload("res://resources/mp3/sfx/any_in_settings.mp3")
+		$sfx.play()
+		$CanvasLayer/Pause_menu.set_visible(toggle)
+
 func _on_go_to_settings_toggled(toggle):
 	$sfx.stream = preload("res://resources/mp3/sfx/any_in_settings.mp3")
 	$sfx.play()
