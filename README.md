@@ -5,7 +5,7 @@
 ![GGJ](https://globalgamejam.org/sites/all/themes/globalgamejam_theme/favicon.ico)
 
 # Jam Theme: *Roots* Global Game Jam 2023
-![itch.io](https://itch.io/favicon.ico) [**Play on itch.io**](https://zolkins.itch.io/road-game)
+![itch.io](https://itch.io/favicon.ico) [**Play on itch.io**](https://zolkins.itch.io/rootsgame)
 
 ## 🤔 What is the purpose of this repository?
 
