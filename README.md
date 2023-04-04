@@ -18,7 +18,7 @@
 
 ### 🥕🎮🏖️
 
-- ***This repository contains a game where the goal of which is to earn yourself a vacation by growing root vegetables.*** 
+- ***This repository contains a game the goal of which is to earn yourself a vacation by growing root vegetables.*** 
 
 ### 🌱💦😅
 
