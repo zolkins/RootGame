@@ -26,7 +26,7 @@
 
 ### 💰💼🚣
 
-- ***The catch is that the selling prices change every day, which means you'll have to become a true entrepreneur***
+- ***The catch is that the selling prices changes every day, which means you'll have to become a true entrepreneur***
 
 ##  Player controls
 
