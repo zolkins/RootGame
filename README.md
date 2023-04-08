@@ -8,11 +8,17 @@
 
 ## Links
 
->[![YouTube](https://www.youtube.com/s/desktop/932eb6a8/img/favicon_48x48.png)](https://www.youtube.com/watch?v=4BDzRE_Zzuo&t=13s)**[ Video on YouTube](https://www.youtube.com/watch?v=4BDzRE_Zzuo&t=13s)**
+>[**Video on YouTube**](https://www.youtube.com/watch?v=4BDzRE_Zzuo&t=13s)
 >
->[![itch.io](https://itch.io/favicon.ico)](https://zolkins.itch.io/rootsgame) [**Play on itch.io**](https://zolkins.itch.io/rootsgame)
+>[![YouTube](https://im.ezgif.com/tmp/ezgif-1-9da268c8cb.png)](https://www.youtube.com/watch?v=4BDzRE_Zzuo&t=13s)
 >
->[![Trello](https://a.trellocdn.com/prgb/assets/f8e8c2501855c363a6bf.png)](https://trello.com/b/biV4kgVa/ggjambestteam) **[Our public board on Trello](https://trello.com/b/biV4kgVa/ggjambestteam)**
+>[**Play on itch.io**](https://zolkins.itch.io/rootsgame)
+>
+>[![itch.io](https://im.ezgif.com/tmp/ezgif-1-acbf825af9.png)](https://zolkins.itch.io/rootsgame)
+>
+>[**Our public board on Trello**](https://trello.com/b/biV4kgVa/ggjambestteam)
+>
+>[![Trello](https://im.ezgif.com/tmp/ezgif-1-8e0b134fe0.png)](https://trello.com/b/biV4kgVa/ggjambestteam)
 
 ## 🤔 What is the purpose of this repository?
 
@@ -32,16 +38,20 @@
 
 - Move: <kbd>W A S D</kbd> or  <kbd>🢁 🢀 🢃 🢂</kbd> 
 
+![move_gif](https://gcdnb.pbrd.co/images/axbIkuDTUJkq.gif)
 
-- Idle
 
-
-- Death
-
-![desc](url)
 
 ## Screenshots
 
+- **Seeds**
+![seeds](https://im3.ezgif.com/tmp/ezgif-3-c9b8631c1b.gif)
+- **Potato**
+![potato_grow](https://im3.ezgif.com/tmp/ezgif-3-7cb8c7ef1f.gif)
+- **Carrot**
+![carrot_grow](https://im3.ezgif.com/tmp/ezgif-3-235eee03e4.gif)
+- **Beetroot**
+![beetroot_grow](https://im3.ezgif.com/tmp/ezgif-3-96078c526a.gif)
 
 ##  Made with Godot engine v3.1-link
 >[![godot](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Godot_logo.svg/1280px-Godot_logo.svg.png)](https://github.com/godotengine/godot)
