@@ -10,15 +10,15 @@
 
 >[**Video on YouTube**](https://www.youtube.com/watch?v=4BDzRE_Zzuo&t=13s)
 >
->[![YouTube](https://im.ezgif.com/tmp/ezgif-1-9da268c8cb.png)](https://www.youtube.com/watch?v=4BDzRE_Zzuo&t=13s)
+>[![YouTube](https://i.imgur.com/8FzTEfi.png)](https://www.youtube.com/watch?v=4BDzRE_Zzuo&t=13s)
 >
 >[**Our public board on Trello**](https://trello.com/b/biV4kgVa/ggjambestteam)
 >
->[![Trello](https://im.ezgif.com/tmp/ezgif-1-8e0b134fe0.png)](https://trello.com/b/biV4kgVa/ggjambestteam)
+>[![Trello](https://i.imgur.com/xUQsIqt.png)](https://trello.com/b/biV4kgVa/ggjambestteam)
 >
 >[**Play on itch.io**](https://zolkins.itch.io/rootsgame)
 >
->[![itch.io](https://im.ezgif.com/tmp/ezgif-1-acbf825af9.png)](https://zolkins.itch.io/rootsgame)
+>[![itch.io](https://i.imgur.com/RadK1jF.png)](https://zolkins.itch.io/rootsgame)
 >
 ## 🤔 What is the purpose of this repository?
 
@@ -47,13 +47,13 @@
 ### Growing:
 
 >- **Seeds**
->![seeds](https://im3.ezgif.com/tmp/ezgif-3-c9b8631c1b.gif)
+>![seeds](https://i.imgur.com/42AaKw6.gif)
 >- **Potato**
->![potato_grow](https://im3.ezgif.com/tmp/ezgif-3-7cb8c7ef1f.gif)
+>![potato_grow](https://i.imgur.com/uyIKmfO.gif)
 >- **Carrot**
->![carrot_grow](https://im3.ezgif.com/tmp/ezgif-3-235eee03e4.gif)
+>![carrot_grow](https://i.imgur.com/KYH8hrT.gif)
 >- **Beetroot**
->![beetroot_grow](https://im3.ezgif.com/tmp/ezgif-3-96078c526a.gif)
+>![beetroot_grow](https://i.imgur.com/Kxw1QIq.gif)
 >
 
 ### Map:
@@ -61,11 +61,11 @@
 >![map](url)
 
 ##  Made with Godot engine v3.1-link
->[![godot](https://im.ezgif.com/tmp/ezgif-1-8330888ad7.png)](https://github.com/godotengine/godot)
+>[![godot](https://i.imgur.com/bVjKYem.png)](https://github.com/godotengine/godot)
 
 ## *Global Game Jam links*
 > [![GGJ_UA](https://blogger.googleusercontent.com/img/a/AVvXsEj7yYOgbZHzKeWymlhZjrMKQho2Obum-Gp2E2GX2aP8WtRO39MnZNlizljjLYpEXHd2CI4mDOQE2uX9btllKuehVPkhhu8KhZv57Q5mj4YQTDCChKrPWjbtCz1CRb0pV13AAAO5LACG3NIfnNKe2nXb4nTxxf0Jaq2rA-OKt_tq-S4ms7PvqdZImcS4vg=s1000)](http://www.ggj.org.ua/)
-> [![GGJ](https://im.ezgif.com/tmp/ezgif-1-dec2cded05.jpg)](https://globalgamejam.org/) 
+> [![GGJ](https://i.imgur.com/xusK4li.jpg)](https://globalgamejam.org/) 
 
 
 ## 👨‍💻 Authors
