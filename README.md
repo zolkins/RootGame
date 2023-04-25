@@ -10,11 +10,11 @@
 
 >[**Video on YouTube**](https://www.youtube.com/watch?v=4BDzRE_Zzuo&t=13s)
 >
->[![YouTube](https://i.imgur.com/8FzTEfi.png)](https://www.youtube.com/watch?v=4BDzRE_Zzuo&t=13s)
+>[![YouTube](https://i.imgur.com/qKio0Qq.png)](https://www.youtube.com/watch?v=4BDzRE_Zzuo&t=13s)
 >
 >[**Our public board on Trello**](https://trello.com/b/biV4kgVa/ggjambestteam)
 >
->[![Trello](https://i.imgur.com/xUQsIqt.png)](https://trello.com/b/biV4kgVa/ggjambestteam)
+>[![Trello](https://i.imgur.com/L9LRMcz.png)](https://trello.com/b/biV4kgVa/ggjambestteam)
 >
 >[**Play on itch.io**](https://zolkins.itch.io/rootsgame)
 >
