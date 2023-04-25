@@ -70,7 +70,9 @@
 
 ## 👨‍💻 Authors
 - ### 👤 [@zolkins](https://github.com/zolkins)
+>![av_zolk](https://avatars.githubusercontent.com/u/57059372)
 - ### 👤 [@CreperDN](https://github.com/CreperDN)
+>![av+Creper](https://avatars.githubusercontent.com/u/97560239)
 
 ##  🤝 Contributing
 - Contributions, issues and feature requests are welcome!
