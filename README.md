@@ -1,9 +1,7 @@
-
-
 # RootGame
 
 
-## **Jam Theme: *Roots* Global Game Jam 2023**
+## **Jam Theme: *Roots* || Global Game Jam 2023**
 
 
 ## Links
@@ -21,25 +19,26 @@
 >[![itch.io](https://i.imgur.com/RadK1jF.png)](https://zolkins.itch.io/rootsgame)
 >
 ## 🤔 What is the purpose of this repository?
-
-### 🥕🎮🏖️
-
-- ***This repository contains a game the goal of which is to earn yourself a vacation by growing root vegetables.*** 
-
-### 🌱💦😅
-
-- ***However, not everything is so simple, you will have to take care of your beds, water them, and expand!*** 
-
-### 💰💼🚣
-
-- ***The catch is that the selling prices changes every day, which means you'll have to become a true entrepreneur***
+>
+>### 🥕🎮🏖️
+>
+>- ***This repository contains a game the goal of which is to earn yourself a vacation by growing root vegetables.*** 
+>
+>### 🌱💦😅
+>
+>- ***However, not everything is so simple, you will have to take care of your beds, water them, and expand!*** 
+>
+>### 💰💼🚣
+>
+>- ***The catch is that the selling prices changes every day, which means you'll have to become a true entrepreneur***
+>
 
 ##  Player controls
-
-- Move: <kbd>W A S D</kbd> or  <kbd>🢁 🢀 🢃 🢂</kbd> 
-
-![move_gif](https://gcdnb.pbrd.co/images/axbIkuDTUJkq.gif)
-
+>
+>- Move: <kbd>W A S D</kbd> or  <kbd>🢁 🢀 🢃 🢂</kbd> 
+>
+>![move_gif](https://gcdnb.pbrd.co/images/axbIkuDTUJkq.gif)
+>
 
 
 ## Screenshots
@@ -69,9 +68,10 @@
 
 
 ## 👨‍💻 Authors
-- ### 👤 [@zolkins](https://github.com/zolkins)
+>- ### 👤 [@zolkins](https://github.com/zolkins)
 >![av_zolk](https://avatars.githubusercontent.com/u/57059372)
-- ### 👤 [@CreperDN](https://github.com/CreperDN)
+
+>- ### 👤 [@CreperDN](https://github.com/CreperDN)
 >![av+Creper](https://avatars.githubusercontent.com/u/97560239)
 
 ##  🤝 Contributing
