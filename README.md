@@ -69,10 +69,10 @@
 
 ## 👨‍💻 Authors
 >- ### 👤 [@zolkins](https://github.com/zolkins)
->![av_zolk](https://avatars.githubusercontent.com/u/57059372)
+>[![av_zolk](https://avatars.githubusercontent.com/u/57059372)](https://github.com/zolkins)
 
 >- ### 👤 [@CreperDN](https://github.com/CreperDN)
->![av+Creper](https://avatars.githubusercontent.com/u/97560239)
+>[![av+Creper](https://avatars.githubusercontent.com/u/97560239)](https://github.com/CreperDN)
 
 ##  🤝 Contributing
 - Contributions, issues and feature requests are welcome!
